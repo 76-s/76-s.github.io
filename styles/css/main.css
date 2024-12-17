@@ -1,0 +1,20 @@
+body {
+    height: 100vh;    /* vh是视口高度单位，表示 1% 的视口高度。
+                        通过设置为100vh，确保body元素占据整个视口高度，
+                        这样背景图片就能填满整个屏幕了 */
+    margin: 0;        /* 将body元素的外边距设置为0，避免出现默认的外边距导致布局问题 */
+    padding: 0;       /* 将body元素的内边距设置为0，避免出现默认的内边距导致布局问题 */
+    overflow: hidden;    /* 溢出部分被隐藏（将滚动条隐藏） */
+    background-size: cover;    /* 使背景图片尽可能覆盖整个容器，同时保持宽高比，可能会导致图片被拉伸或裁剪 */
+    background-repeat: no - repeat;   /* 确保背景图片不会重复显示 */
+    background-position: center center;  /* 将背景图片定位在容器的中心位置 */
+    background-image: url(../../images/极光.png);   /* 设置背景图片的路径，这里是使用相对路径指向极光图片 */
+    display: flex;    /* 将body元素设置为Flex布局，使其子元素可以方便地进行对齐等操作 */
+    justify-content: center;    /* 水平方向上，让子元素（文本等内容）居中对齐 */
+    align-items: center;    /* 垂直方向上，让子元素（文本等内容）居中对齐 */
+    flex-direction: column;    /* 将子元素按列排列（如果后续有多个元素需要垂直排列，可按需调整） */
+}
+
+.text-white {
+    color: white;    /* 将字体颜色改为白色*/
+}
