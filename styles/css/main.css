@@ -8,7 +8,7 @@ body {
     background-size: cover;    /* 使背景图片尽可能覆盖整个容器，同时保持宽高比，可能会导致图片被拉伸或裁剪 */
     background-repeat: no - repeat;   /* 确保背景图片不会重复显示 */
     background-position: center center;  /* 将背景图片定位在容器的中心位置 */
-    background-image: url(../../images/极光.png);   /* 设置背景图片的路径，这里是使用相对路径指向极光图片 */
+    background-image: url(../../images/极光.jpg);   /* 设置背景图片的路径，这里是使用相对路径指向极光图片 */
     display: flex;    /* 将body元素设置为Flex布局，使其子元素可以方便地进行对齐等操作 */
     justify-content: center;    /* 水平方向上，让子元素（文本等内容）居中对齐 */
     align-items: center;    /* 垂直方向上，让子元素（文本等内容）居中对齐 */
