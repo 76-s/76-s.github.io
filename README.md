@@ -1,3 +1,2 @@
 一款追求简约而又不失优雅的个人引导页
-HELLO
-WORLD
+hello_world
