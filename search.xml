@@ -192,35 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>示例文章</title>
-    <url>/2024/08/31/test/</url>
-    <content><![CDATA[
-<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="77757203f5db5a22f775eac1d250805f0f476da4ec6fab2559940acb4ccba7fc">5844f566621fccb9c583f0174433e5302d4d1af5160886dd5b64e32199b83216250ab36520720720e031335c66d474abe53195f9da6c376be75fd59cb1915352e377ff86ccb3c672c62706d7e8f5a75c</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<link href="/css/hbe.style.css" rel="stylesheet" type="text/css"><script data-swup-reload-script type="module" src="/js/plugins/hbe.js"></script>
-<script data-swup-reload-script type="module">
-import {initHBE} from "/js/plugins/hbe.js";
-  console.log("hexo-blog-encrypt: loaded.");
-    initHBE();
-</script>
-]]></content>
-      <categories>
-        <category>示例</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>天气预报自动推送</title>
     <url>/2024/10/07/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%8E%A8%E9%80%81/</url>
     <content><![CDATA[<h4 id="一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）"><a href="#一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）" class="headerlink" title="一、申请微信测试公众号（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）"></a>一、申请微信测试公众号（<a class="link"   href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login%EF%BC%89" >https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h4><ol>
@@ -405,6 +376,247 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
       </categories>
       <tags>
         <tag>堡垒机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL的三种安装方式示例（包成功😋）</title>
+    <url>/2025/05/14/MySQL%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="定义和历史背景"><a href="#定义和历史背景" class="headerlink" title="定义和历史背景"></a>定义和历史背景</h4><p>  MySQL 是一个广泛使用的开源关系型数据库管理系统（RDBMS）。它最初由瑞典 MySQL AB 公司开发，在 2008 年被 Sun Microsystems 收购，之后 Oracle 又收购了 Sun Microsystems，MySQL 也随之成为 Oracle 旗下的产品。</p>
+<h4 id="数据库存储结构"><a href="#数据库存储结构" class="headerlink" title="数据库存储结构"></a>数据库存储结构</h4><p>数据库（Database）：MySQL 是数据库的集合，每个数据库用于存储相关的数据。</p>
+<p>表（Table）：数据库包含一个或多个表，表是数据存储的基本单位。表由行（Row）和列（Column）组成。</p>
+<p>   索引（Index）：索引是一种特殊的数据结构，用于提高数据库的查询性能。它类似于书籍的目录，通过创建 索引，可以更快地定位和检索表中的数据。</p>
+<h4 id="SQL语言支持"><a href="#SQL语言支持" class="headerlink" title="SQL语言支持"></a>SQL语言支持</h4><ul>
+<li>数据定义语言（DDL）：用于定义数据库的结构，包括创建（CREATE）、修改（ALTER）和删除（DROR）数据库、表、索引等。</li>
+<li>数据操作语言（DML）：用于操作表中的数据，主要包括插入（INSERT）、查询（SELECT）、更新（UPDATE）和删除（DELETE）操作。</li>
+<li>数据控制语言（DCL）：主要用于管理数据库用户的权限，如GRANT（授予权限）和REVOKE（收回权限）</li>
+</ul>
+<h4 id="MySQL逻辑结构与Linux系统对比"><a href="#MySQL逻辑结构与Linux系统对比" class="headerlink" title="MySQL逻辑结构与Linux系统对比:"></a>MySQL逻辑结构与Linux系统对比:</h4><table>
+<thead>
+<tr>
+<th>MySQL</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>库</td>
+<td>目录</td>
+</tr>
+<tr>
+<td>show databases;</td>
+<td>ls -l &#x2F;</td>
+</tr>
+<tr>
+<td>use mysql</td>
+<td>cd &#x2F;mysql</td>
+</tr>
+<tr>
+<td>表</td>
+<td>普通文件</td>
+</tr>
+<tr>
+<td>show tables</td>
+<td>ls</td>
+</tr>
+</tbody></table>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>（这里使用机器为 Rocky Linux 9.4 ）</p>
+<h4 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 从官方选择对应的 mysql 源码包</span></span><br><span class="line"><span class="comment"># https://dev.mysql.com/downloads/mysql/mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz</span></span><br><span class="line"><span class="comment"># 上传下载好的压缩包到指定服务器 </span></span><br><span class="line">wget https://dev.mysql.com/get/Downloads/mysql/mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz</span><br><span class="line">tar -xvf mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz </span><br><span class="line"><span class="built_in">mv</span> mysql-8.4.3-linux-glibc2.28-x86_64 /usr/local/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建mysql用户，因为启动mysql需要该用户</span></span><br><span class="line">groupadd mysql</span><br><span class="line">useradd -r -g mysql -s /bin/false mysql -M </span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建数据目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /data/mysql</span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /data/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /data/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化</span></span><br><span class="line">/usr/local/mysql/bin/mysqld --initialize-insecure --basedir=/usr/local/mysql --datadir=/data/mysql --user=mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 以服务的方式启动（传统方式，可选）</span></span><br><span class="line"><span class="comment"># cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql.server</span></span><br><span class="line"><span class="comment"># systemctl daemon-reload</span></span><br><span class="line"><span class="comment"># /etc/init.d/mysql.server start</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加环境变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=$PATH:/usr/local/mysql/bin&#x27;</span> &gt;&gt; /etc/profile</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment">#################################################################</span></span><br><span class="line"><span class="comment">## 将传统的以服务启动的方式改为 systemd 进行管理</span></span><br><span class="line"><span class="comment">## 首先关闭 selinux ！！！</span></span><br><span class="line"><span class="comment">## 在/etc/systemd/system/目录下配置文件 mysql.service</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/systemd/system/mysql.service &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=MySQL Server</span></span><br><span class="line"><span class="string">After=network.target syslog.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">User=mysql</span></span><br><span class="line"><span class="string">Group=mysql</span></span><br><span class="line"><span class="string">ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf</span></span><br><span class="line"><span class="string">ExecReload=/bin/kill -HUP $MAINPID</span></span><br><span class="line"><span class="string">Restart=on-failure</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target    </span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 配置默认文件缺失</span></span><br><span class="line"><span class="comment"># MySQL 不会在二进制安装时自动生成 my.cnf 文件，因为它无法确定需要的具体配置。这就意味着你得手动创建该文件。</span></span><br><span class="line"><span class="comment"># 在 ExecStart 行中启动命令后添加 --defaults-file=/etc/my.cnf 参数进行配置文件关联</span></span><br><span class="line"><span class="comment"># 创建 my.cnf 文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/my.cnf &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">[mysqld]</span></span><br><span class="line"><span class="string"># 基本目录</span></span><br><span class="line"><span class="string">basedir = /usr/local/mysql</span></span><br><span class="line"><span class="string"># 数据目录</span></span><br><span class="line"><span class="string">datadir = /data/mysql</span></span><br><span class="line"><span class="string"># PID文件路径</span></span><br><span class="line"><span class="string">pid-file = /data/mysql/mysql.pid</span></span><br><span class="line"><span class="string"># 套接字文件路径</span></span><br><span class="line"><span class="string">socket = /tmp/mysql.sock</span></span><br><span class="line"><span class="string"># 监听端口</span></span><br><span class="line"><span class="string">port = 3306</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 其他常见配置</span></span><br><span class="line"><span class="string"># 字符集设置</span></span><br><span class="line"><span class="string">character-set-server = utf8mb4</span></span><br><span class="line"><span class="string">collation-server = utf8mb4_unicode_ci</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 日志相关配置</span></span><br><span class="line"><span class="string">log-error = /data/mysql/error.log</span></span><br><span class="line"><span class="string">general_log = 0</span></span><br><span class="line"><span class="string">general_log_file = /data/mysql/general.log</span></span><br><span class="line"><span class="string">slow_query_log = 1</span></span><br><span class="line"><span class="string">slow_query_log_file = /data/mysql/slow.log</span></span><br><span class="line"><span class="string">long_query_time = 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 内存相关配置</span></span><br><span class="line"><span class="string">innodb_buffer_pool_size = 128M</span></span><br><span class="line"><span class="string">key_buffer_size = 16M</span></span><br><span class="line"><span class="string">EOF</span>   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 赋权</span></span><br><span class="line"><span class="built_in">chmod</span> 644 /etc/my.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart mysql</span><br><span class="line">systemctl status mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下命令可查看 MySQL 所有的配置选项及其当前值</span></span><br><span class="line">SHOW VARIABLES;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="从源码编译安装"><a href="#从源码编译安装" class="headerlink" title="从源码编译安装"></a>从源码编译安装</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 从官方选择对应的 mysql 源码包</span></span><br><span class="line"><span class="comment"># https://dev.mysql.com/downloads/mysql/</span></span><br><span class="line"><span class="comment"># 上传下载好的压缩包到指定服务器</span></span><br><span class="line">wget https://dev.mysql.com/get/Downloads/mysql/mysql-8.4.3.tar.gz</span><br><span class="line">tar -zxvf mysql-8.4.3.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-8.4.3</span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载必要的软件包</span></span><br><span class="line">yum install -y gcc gcc-c++ make cmake ncurses-devel bison wget tar bzip2 zlib zlib-devel gcc-toolset-12-gcc gcc-toolset-12-gcc-c++ gcc-toolset-12-binutils gcc-toolset-12-annobin-annocheck gcc-toolset-12-annobin-plugin-gcc openssl openssl-devel </span><br><span class="line"><span class="built_in">sudo</span> dnf install -y rpcgen</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装libtirpc-devel</span></span><br><span class="line">yum install -y libtirpc-devel <span class="comment"># 这个一般不行</span></span><br><span class="line"></span><br><span class="line">wget https://rpmfind.net/linux/centos-stream/9-stream/BaseOS/x86_64/os/Packages/libtirpc-1.3.3-2.el9.x86_64.rpm</span><br><span class="line">rpm -ivh libtirpc-1.3.3-2.el9.x86_64.rpm</span><br><span class="line"><span class="comment"># sudo rpm -Uvh --oldpackage libtirpc-1.3.3-2.el9.x86_64.rpm    -U:有则升级，无则安装。</span></span><br><span class="line"></span><br><span class="line">wget https://rpmfind.net/linux/centos-stream/9-stream/CRB/x86_64/os/Packages/libtirpc-devel-1.3.3-2.el9.x86_64.rpm</span><br><span class="line">rpm -ivh libtirpc-devel-1.3.3-2.el9.x86_64.rpm </span><br><span class="line"></span><br><span class="line"><span class="comment"># 依赖环境</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line">wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2</span><br><span class="line">tar -jxvf boost_1_77_0.tar.bz2</span><br><span class="line"></span><br><span class="line"><span class="comment"># build 是个空目录</span></span><br><span class="line"><span class="built_in">cd</span> mysql-8.4.3/build/</span><br><span class="line"><span class="comment"># 到MySQL源码的build目录（个人新建）并运行cmake命令，以继续配置和编译MySQL：</span></span><br><span class="line">cmake .. -DWITH_BOOST=/root/boost_1_77_0 \</span><br><span class="line">         -DWITH_ZLIB=bundled \</span><br><span class="line">         -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \</span><br><span class="line">         -DMYSQL_DATADIR=/usr/local/mysql/data \</span><br><span class="line">         -DSYSCONFDIR=/etc \</span><br><span class="line">         -DWITH_INNOBASE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_PARTITION_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_FEDERATED_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_ARCHIVE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DENABLED_LOCAL_INFILE=1 \</span><br><span class="line">         -DWITH_SSL=system \</span><br><span class="line">         -DWITH_LIBWRAP=0 \</span><br><span class="line">         -DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock</span><br><span class="line">         </span><br><span class="line"><span class="comment"># 编译 MySQL</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 MySQL</span></span><br><span class="line">make install </span><br><span class="line"></span><br><span class="line"><span class="comment">## 开始配置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建mysql用户和配置权限</span></span><br><span class="line"><span class="comment"># 创建一个名为 mysql 的用户组</span></span><br><span class="line">groupadd mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r表示创建一个系统用户（system user），这种用户通常用于运行服务或系统进程，没有登录权限。</span></span><br><span class="line"><span class="comment"># -g mysql：指定用户的主组为 mysql，让该用户属于前面创建的 mysql 用户组。</span></span><br><span class="line"><span class="comment"># -s /bin/false：指定用户的默认登录 shell 为 /bin/false，这样做的目的是不允许该用户登录系统，进一步增强安全性。</span></span><br><span class="line">useradd -r -g mysql -s /bin/false mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## /etc/my.cnf</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/my.cnf &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[mysqld]  # 表示这是 MySQL 服务的配置部分</span></span><br><span class="line"><span class="string">basedir = /usr/local/mysql  # 设置 MySQL 的安装目录为 /usr/local/mysql</span></span><br><span class="line"><span class="string">datadir = /usr/local/mysql/data  # 设置 MySQL 的数据存储目录为 /usr/local/mysql/data</span></span><br><span class="line"><span class="string">port = 3306  # 指定 MySQL 服务监听的端口号为 3306，这是 MySQL 的默认端口</span></span><br><span class="line"><span class="string">socket = /var/lib/mysql/mysql.sock  # 指定 MySQL 进程的 socket 文件路径，用于本地客户端连接</span></span><br><span class="line"><span class="string">user = mysql  # 指定运行 MySQL 服务的用户为 mysql，增加安全性</span></span><br><span class="line"><span class="string">symbolic-links = 0  # 禁用符号链接功能，增加系统安全性</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">log_error = /var/log/mysql/error.log  # 设置错误日志文件的路径，记录 MySQL 服务的错误信息</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">general_log = 1  # 启用通用查询日志，记录所有执行的查询语句</span></span><br><span class="line"><span class="string">general_log_file = /var/log/mysql/general.log  # 设置通用查询日志的存储路径</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">slow_query_log = 1  # 启用慢查询日志，用于记录执行时间较长的查询</span></span><br><span class="line"><span class="string">slow_query_log_file = /var/log/mysql/slow.log  # 指定慢查询日志文件的路径</span></span><br><span class="line"><span class="string">long_query_time = 2  # 设置慢查询的阈值，记录执行时间超过 2 秒的查询</span></span><br><span class="line"><span class="string"># pid-file = /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string">pid-file=/usr/local/mysql/mysqld.pid </span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/log/mysql</span><br><span class="line"><span class="comment"># mkdir -p /var/run/mysqld</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/lib/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># mysql logs for /var/log/mysql</span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/log/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /var/log/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># /usr/local/mysql 安装主目录</span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /usr/local/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /usr/local/mysql</span><br><span class="line"><span class="built_in">mkdir</span> /usr/local/mysql/data</span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /usr/local/mysql/data</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /usr/local/mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="comment"># chown mysql:mysql /var/run/mysqld</span></span><br><span class="line"><span class="comment"># chmod 755 /var/run/mysqld</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /var/lib/mysql/mysql.sock </span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/lib/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /var/lib/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化</span></span><br><span class="line">/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --initialize-insecure</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动 mysql 服务</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/systemd/system/mysql.service&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=MySQL Server</span></span><br><span class="line"><span class="string">After=network.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=forking</span></span><br><span class="line"><span class="string">ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string">ExecStop=/usr/local/mysql/bin/mysqladmin --defaults-file=/etc/my.cnf shutdown</span></span><br><span class="line"><span class="string">User=mysql</span></span><br><span class="line"><span class="string">Group=mysql</span></span><br><span class="line"><span class="string">PIDFile=/var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> mysql</span><br><span class="line">systemctl start mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置个root密码</span></span><br><span class="line">/usr/local/mysql/bin/mysql_secure_installation</span><br><span class="line"><span class="comment"># Ag#@190&#125;678900 # 我的密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加到系统环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/mysql/bin</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line">mysql -uroot -pAg#@190&#125;678900</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建个远程管理用户</span></span><br><span class="line"><span class="comment"># 开启远程连接</span></span><br><span class="line">CREATE USER <span class="string">&#x27;sxs&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;Ag#@190&#125;678900&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;sxs&#x27;</span>@<span class="string">&#x27;%&#x27;</span> WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="yum-安装方式"><a href="#yum-安装方式" class="headerlink" title="yum 安装方式"></a>yum 安装方式</h4><hr>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">- 本地系统源安装</span><br><span class="line"></span><br><span class="line">    yum -y install mysql    <span class="comment"># 安装的 mysql软件包包含了 MySQL 客户端程序等组件。</span></span><br><span class="line">    <span class="comment">## 这使得用户能够在命令行下连接到远程 MySQL 服务器进行数据库操作，如查询数据库、执行 SQL 语句等。</span></span><br><span class="line">    </span><br><span class="line">    yum -y install mysql-server     <span class="comment"># 安装 MySQL 服务器相关的软件包。</span></span><br><span class="line">    <span class="comment">## 这个命令会安装 MySQL 服务器软件，使得计算机能够作为一个 MySQL 服务器运行，接受客户端的连接请求并处理数据库事务。</span></span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">- 官方源安装（脱离了系统源）</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 从官方选择对应的操作系统的 mysql 安装源</span></span><br><span class="line">    <span class="comment"># https://dev.mysql.com/downloads/</span></span><br><span class="line">    <span class="comment"># 上传下载好的 rpm 包到指定服务器</span></span><br><span class="line">     scp .\mysql84-community-release-el9-1.noarch.rpm root@192.168.241.130:/root   </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 安装下载好的源</span></span><br><span class="line">    dnf install -y mysql84-community-release-el9-1.noarch.rpm</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 安装 MySQL 服务器及其依赖项</span></span><br><span class="line">    <span class="built_in">sudo</span> dnf install mysql-server</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 启动 MySQL 服务并设置开机自启</span></span><br><span class="line">    <span class="built_in">sudo</span> systemctl --now <span class="built_in">enable</span> mysqld</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取临时密码</span></span><br><span class="line">    grep <span class="string">&#x27;temporary password&#x27;</span> /var/log/mysqld.log</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 登录并修改密码</span></span><br><span class="line">    mysql -uroot -p</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 查看安全策略（可选）</span></span><br><span class="line">    SHOW VARIABLES LIKE <span class="string">&#x27;validate_password%&#x27;</span>;    </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 降低安全策略（可选，主要是为了学习或者测试时设置简单的密码方便记忆）</span></span><br><span class="line">    <span class="built_in">set</span> global validate_password.policy=0;</span><br><span class="line">    <span class="built_in">set</span> global validate_password.length=1;</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+<h4 id="通过-MySQL-安装向导（适用于-Windows-环境）"><a href="#通过-MySQL-安装向导（适用于-Windows-环境）" class="headerlink" title="通过 MySQL 安装向导（适用于 Windows 环境）"></a>通过 MySQL 安装向导（适用于 Windows 环境）</h4>]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis的三种模式解析</title>
+    <url>/2025/05/14/MySQL-MHA/</url>
+    <content><![CDATA[<h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><p>工作原理：</p>
+<ol>
+<li><p>slave启动后，向master发送SYNC命令，master接收到SYNC命令后通过bgsave保存快照（即上文所介绍的RDB持久化），并使用缓冲区记录保存快照这段时间内执行的写命令</p>
+</li>
+<li><p>master将保存的快照文件发送给slave，并继续记录执行的写命令</p>
+</li>
+<li><p>slave接收到快照文件后，加载快照文件，载入数据</p>
+</li>
+<li><p>master快照发送完后开始向slave发送缓冲区的写命令，slave接收命令并执行，完成复制初始化</p>
+</li>
+<li><p>此后master每次执行一个写命令都会同步发送给slave，保持master与slave之间数据的一致性</p>
+</li>
+</ol>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i-blog.csdnimg.cn/direct/aeb5f00ade344abfa427f5b49b4d02a3.png"
+                     
+                >编辑</p>
+<p>优点：</p>
+<ol>
+<li><p>master能自动将数据同步到slave，可以进行读写分离，分担master的读压力</p>
+</li>
+<li><p>master、slave之间的同步是以非阻塞的方式进行的，同步期间，客户端仍然可以提交查询或更新请求</p>
+</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li><p>不具备自动容错与恢复功能，master或slave的宕机都可能导致客户端请求失败，需要等待机器重启或手动切换客户端IP才能恢复</p>
+</li>
+<li><p>master宕机，如果宕机前数据没有同步完，则切换IP后会存在数据不一致的问题</p>
+</li>
+<li><p>难以支持在线扩容，Redis的容量受限于单机配置</p>
+</li>
+</ol>
+<h3 id="Sentinel（哨兵）"><a href="#Sentinel（哨兵）" class="headerlink" title="Sentinel（哨兵）"></a>Sentinel（哨兵）</h3><p>哨兵模式基于主从复制模式，只是引入了哨兵来监控与自动处理故障。</p>
+<p>功能主要包括：</p>
+<p>1、监控master、slave是否正常运行</p>
+<p>2、当master出现故障时，能自动将一个slave转换为master（大哥挂了，选一个小弟上位）</p>
+<p>3、多个哨兵可以监控同一个Redis，哨兵之间也会自动监控</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i-blog.csdnimg.cn/direct/387d9643531f47dda779d413977b351d.png"
+                     
+                ></p>
+<p>工作原理：</p>
+<p>哨兵模式的具体工作机制： 在配置文件中通过 sentinel monitor &lt;master-name&gt; &lt;ip&gt; &lt;redis-port&gt; &lt;quorum&gt; 来定位master的IP、端口，一个哨兵可以监控多个master数据库，只需要提供多个该配置项即可。哨兵启动后，会与要监控的master建立两条连接：</p>
+<ol>
+<li><p>一条连接用来订阅master的_sentinel_:hello频道与获取其他监控该master的哨兵节点信息</p>
+</li>
+<li><p>另一条连接定期向master发送INFO等命令获取master本身的信息</p>
+</li>
+</ol>
+<p>与master建立连接后，哨兵会执行三个操作：</p>
+<ol>
+<li><p>定期（一般10s一次，当master被标记为主观下线时，改为1s一次）向master和slave发送INFO命令</p>
+</li>
+<li><p>定期向master和slave的_sentinel_:hello频道发送自己的信息</p>
+</li>
+<li><p>定期（1s一次）向master、slave和其他哨兵发送PING命令</p>
+</li>
+</ol>
+<p>发送INFO命令可以获取当前数据库的相关信息从而实现新节点的自动发现。所以说哨兵只需要配置master数据库信息就可以自动发现其slave信息。获取到slave信息后，哨兵也会与slave建立两条连接执行监控。通过INFO命令，哨兵可以获取主从数据库的最新信息，并进行相应的操作，比如角色变更等。</p>
+<p>接下来哨兵向主从数据库的_sentinel_:hello频道发送信息与同样监控这些数据库的哨兵共享自己的信息，发送内容为哨兵的ip端口、运行id、配置版本、master名字、master的ip端口还有master的配置版本。这些信息有以下用处：</p>
+<ol>
+<li><p>其他哨兵可以通过该信息判断发送者是否是新发现的哨兵，如果是的话会创建一个到该哨兵的连接用于发送PING命令。</p>
+</li>
+<li><p>其他哨兵通过该信息可以判断master的版本，如果该版本高于直接记录的版本，将会更新</p>
+</li>
+<li><p>当实现了自动发现slave和其他哨兵节点后，哨兵就可以通过定期发送PING命令定时监控这些数据库和节点有没有停止服务。</p>
+</li>
+</ol>
+<p>如果被PING的数据库或者节点超时（通过 sentinel down-after-milliseconds master-name milliseconds 配置）未回复，哨兵认为其主观下线（sdown，s就是Subjectively —— 主观地）。如果下线的是master，哨兵会向其它哨兵发送命令询问它们是否也认为该master主观下线，如果达到一定数目（即配置文件中的quorum）投票，哨兵会认为该master已经客观下线（odown，o就是Objectively —— 客观地），并选举领头的哨兵节点对主从系统发起故障恢复。若没有足够的sentinel进程同意master下线，master的客观下线状态会被移除，若master重新向sentinel进程发送的PING命令返回有效回复，master的主观下线状态就会被移除</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i-blog.csdnimg.cn/direct/5078493db1174bf78e7a6730ad66a8ae.png"
+                     
+                ></p>
+<p>哨兵认为master客观下线后，故障恢复的操作需要由选举的领头哨兵来执行，选举采用Raft算法：</p>
+<ol>
+<li><p>发现master下线的哨兵节点（我们称他为A）向每个哨兵发送命令，要求对方选自己为领头哨兵</p>
+</li>
+<li><p>如果目标哨兵节点没有选过其他人，则会同意选举A为领头哨兵</p>
+</li>
+<li><p>如果有超过一半的哨兵同意选举A为领头，则A当选</p>
+</li>
+<li><p>如果有多个哨兵节点同时参选领头，此时有可能存在一轮投票无竞选者胜出，此时每个参选的节点等待一个随机时间后再次发起参选请求，进行下一轮投票竞选，直至选举出领头哨兵</p>
+</li>
+</ol>
+<p>选出领头哨兵后，领头者开始对系统进行故障恢复，从出现故障的master的从数据库中挑选一个来当选新的master,选择规则如下：</p>
+<ol>
+<li><p>所有在线的slave中选择优先级最高的，优先级可以通过slave-priority配置</p>
+</li>
+<li><p>如果有多个最高优先级的slave，则选取复制偏移量最大（即复制越完整）的当选</p>
+</li>
+<li><p>如果以上条件都一样，选取id最小的slave</p>
+</li>
+</ol>
+<p>挑选出需要继任的slave后，领头哨兵向该数据库发送命令使其成为master，然后再向其他slave发送命令接受新的master，最后更新数据。将已经停止的旧的master更新为新的master的从数据库，使其恢复服务后以slave的身份继续运行。</p>
+<p>优点：</p>
+<ol>
+<li><p>哨兵模式基于主从复制模式，所以主从复制模式有的优点，哨兵模式也有</p>
+</li>
+<li><p>哨兵模式下，master挂掉可以自动进行切换，系统可用性更高</p>
+</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li><p>同样也继承了主从模式难以在线扩容的缺点，Redis的容量受限于单机配置</p>
+</li>
+<li><p>需要额外的资源来启动sentinel进程，实现相对复杂一点，同时slave节点作为备份节点不提供服务</p>
+</li>
+</ol>
+<h3 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h3><p>哨兵模式解决了主从复制不能自动故障转移，达不到高可用的问题，但还是存在难以在线扩容，Redis容量受限于单机配置的问题。Cluster模式实现了Redis的分布式存储，即每台节点存储不同的内容，来解决在线扩容的问题。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://i-blog.csdnimg.cn/direct/d5e2aa8dd8a9424eb108a363789c4d1e.png"
+                     
+                ><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+                      title="点击并拖拽以移动"
+                >​编辑</p>
+<p>工作原理：</p>
+<ol>
+<li><p>在Redis的每个节点上，都有一个插槽（slot），取值范围为0-16383</p>
+</li>
+<li><p>当我们存取key的时候，Redis会根据CRC16的算法得出一个结果，然后把结果对16384求余数，这样每个key都会对应一个编号在0-16383之间的哈希槽，通过这个值，去找到对应的插槽所对应的节点，然后直接自动跳转到这个对应的节点上进行存取操作</p>
+</li>
+<li><p>为了保证高可用，Cluster模式也引入主从复制模式，一个主节点对应一个或者多个从节点，当主节点宕机的时候，就会启用从节点</p>
+</li>
+<li><p>当其它主节点ping一个主节点A时，如果半数以上的主节点与A通信超时，那么认为主节点A宕机了。如果主节点A和它的从节点都宕机了，那么该集群就无法再提供服务了 Cluster模式集群节点最小配置6个节点(3主3从，因为需要半数以上)，其中主节点提供读写操作，从节点作为备用节点，不提供请求，只作为故障转移使用</p>
+</li>
+</ol>
+<p>优点：</p>
+<ol>
+<li><p>无中心架构，数据按照slot分布在多个节点。</p>
+</li>
+<li><p>集群中的每个节点都是平等的关系，每个节点都保存各自的数据和整个集群的状态。每个节点都和其他所有节点连接，而且这些连接保持活跃，这样就保证了我们只需要连接集群中的任意一个节点，就可以获取到其他节点的数据。</p>
+</li>
+<li><p>可线性扩展到1000多个节点，节点可动态添加或删除</p>
+</li>
+<li><p>能够实现自动故障转移，节点之间通过gossip协议交换状态信息，用投票机制完成slave到master的角色转换</p>
+</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li><p>客户端实现复杂，驱动要求实现Smart Client，缓存slots mapping信息并及时更新，提高了开发难度。目前仅JedisCluster相对成熟，异常处理还不完善，比如常见的“max redirect exception”</p>
+</li>
+<li><p>节点会因为某些原因发生阻塞（阻塞时间大于 cluster-node-timeout）被判断下线，这种failover是没有必要的 3. 数据通过异步复制，不保证数据的强一致性</p>
+</li>
+<li><p>slave充当“冷备”，不能缓解读压力</p>
+</li>
+<li><p>批量操作限制，目前只支持具有相同slot值的key执行批量操作，对mset、mget、sunion等操作支持不友好</p>
+</li>
+<li><p>key事务操作支持有线，只支持多key在同一节点的事务操作，多key分布不同节点时无法使用事务功能</p>
+</li>
+<li><p>不支持多数据库空间，单机redis可以支持16个db，集群模式下只能使用一个，即db 0 Redis Cluster模式不建议使用pipeline和multi-keys操作，减少max redirect产生的场景。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文介绍了Redis集群方案的三种模式，其中主从复制模式能实现读写分离，但是不能自动故障转移；哨兵模式基于主从复制模式，能实现自动故障转移，达到高可用，但与主从复制模式一样，不能在线扩容，容量受限于单机的配置；Cluster模式通过无中心化架构，实现分布式存储，可进行线性扩展，也能高可用，但对于像批量操作、事务操作等的支持性不够好。三种模式各有优缺点，可根据实际场景进行选择。</p>
+<blockquote>
+<p>注：发现问题请联系我进行订正，感谢🌹🌹</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
       </tags>
   </entry>
 </search>
