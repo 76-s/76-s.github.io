@@ -442,7 +442,7 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
   </entry>
   <entry>
     <title>Redis的三种模式解析</title>
-    <url>/2025/05/14/MySQL-MHA/</url>
+    <url>/2025/05/14/Redis%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><p>工作原理：</p>
 <ol>
 <li><p>slave启动后，向master发送SYNC命令，master接收到SYNC命令后通过bgsave保存快照（即上文所介绍的RDB持久化），并使用缓冲区记录保存快照这段时间内执行的写命令</p>
@@ -459,9 +459,9 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://i-blog.csdnimg.cn/direct/aeb5f00ade344abfa427f5b49b4d02a3.png"
+                     data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis01.jpg"
                      
-                >编辑</p>
+                ></p>
 <p>优点：</p>
 <ol>
 <li><p>master能自动将数据同步到slave，可以进行读写分离，分担master的读压力</p>
@@ -486,7 +486,7 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://i-blog.csdnimg.cn/direct/387d9643531f47dda779d413977b351d.png"
+                     data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis02.jpg"
                      
                 ></p>
 <p>工作原理：</p>
@@ -520,7 +520,7 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://i-blog.csdnimg.cn/direct/5078493db1174bf78e7a6730ad66a8ae.png"
+                     data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis03.jpg"
                      
                 ></p>
 <p>哨兵认为master客观下线后，故障恢复的操作需要由选举的领头哨兵来执行，选举采用Raft算法：</p>
@@ -562,14 +562,9 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://i-blog.csdnimg.cn/direct/d5e2aa8dd8a9424eb108a363789c4d1e.png"
+                     data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis04.jpg"
                      
-                ><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
-                      title="点击并拖拽以移动"
-                >​编辑</p>
+                ></p>
 <p>工作原理：</p>
 <ol>
 <li><p>在Redis的每个节点上，都有一个插槽（slot），取值范围为0-16383</p>
