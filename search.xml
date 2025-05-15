@@ -456,12 +456,15 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <li><p>此后master每次执行一个写命令都会同步发送给slave，保持master与slave之间数据的一致性</p>
 </li>
 </ol>
-<p><img  
+<div style="text-align: center;">
+  <figure class="image-caption"><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis01.jpg"
-                     
-                ></p>
+                      alt="图1-主从复制" width="60%"
+                ><figcaption>图1-主从复制</figcaption></figure>
+</div>
+
 <p>优点：</p>
 <ol>
 <li><p>master能自动将数据同步到slave，可以进行读写分离，分担master的读压力</p>
@@ -483,12 +486,17 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 <p>1、监控master、slave是否正常运行</p>
 <p>2、当master出现故障时，能自动将一个slave转换为master（大哥挂了，选一个小弟上位）</p>
 <p>3、多个哨兵可以监控同一个Redis，哨兵之间也会自动监控</p>
-<p><img  
+<div style="text-align: center;">
+  <figure class="image-caption"><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis02.jpg"
-                     
-                ></p>
+                      
+       alt="图2-哨兵模式" 
+       width="60%"
+                ><figcaption>图2-哨兵模式</figcaption></figure> <!-- 可按需调整宽度百分比，如50%、70% -->
+</div>
+
 <p>工作原理：</p>
 <p>哨兵模式的具体工作机制： 在配置文件中通过 sentinel monitor &lt;master-name&gt; &lt;ip&gt; &lt;redis-port&gt; &lt;quorum&gt; 来定位master的IP、端口，一个哨兵可以监控多个master数据库，只需要提供多个该配置项即可。哨兵启动后，会与要监控的master建立两条连接：</p>
 <ol>
@@ -517,12 +525,17 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 </li>
 </ol>
 <p>如果被PING的数据库或者节点超时（通过 sentinel down-after-milliseconds master-name milliseconds 配置）未回复，哨兵认为其主观下线（sdown，s就是Subjectively —— 主观地）。如果下线的是master，哨兵会向其它哨兵发送命令询问它们是否也认为该master主观下线，如果达到一定数目（即配置文件中的quorum）投票，哨兵会认为该master已经客观下线（odown，o就是Objectively —— 客观地），并选举领头的哨兵节点对主从系统发起故障恢复。若没有足够的sentinel进程同意master下线，master的客观下线状态会被移除，若master重新向sentinel进程发送的PING命令返回有效回复，master的主观下线状态就会被移除</p>
-<p><img  
+<div style="text-align: center;">
+  <figure class="image-caption"><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis03.jpg"
-                     
-                ></p>
+                      
+       alt="图3" 
+       width="60%"
+                ><figcaption>图3</figcaption></figure> <!-- 可按需调整宽度百分比，如50%、70% -->
+</div>
+
 <p>哨兵认为master客观下线后，故障恢复的操作需要由选举的领头哨兵来执行，选举采用Raft算法：</p>
 <ol>
 <li><p>发现master下线的哨兵节点（我们称他为A）向每个哨兵发送命令，要求对方选自己为领头哨兵</p>
@@ -559,12 +572,17 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 </li>
 </ol>
 <h3 id="Cluster集群"><a href="#Cluster集群" class="headerlink" title="Cluster集群"></a>Cluster集群</h3><p>哨兵模式解决了主从复制不能自动故障转移，达不到高可用的问题，但还是存在难以在线扩容，Redis容量受限于单机配置的问题。Cluster模式实现了Redis的分布式存储，即每台节点存储不同的内容，来解决在线扩容的问题。</p>
-<p><img  
+<div style="text-align: center;">
+  <figure class="image-caption"><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/redis04.jpg"
-                     
-                ></p>
+                      
+       alt="图4-集群模式" 
+       width="60%"
+                ><figcaption>图4-集群模式</figcaption></figure> <!-- 可按需调整宽度百分比，如50%、70% -->
+</div>
+
 <p>工作原理：</p>
 <ol>
 <li><p>在Redis的每个节点上，都有一个插槽（slot），取值范围为0-16383</p>
