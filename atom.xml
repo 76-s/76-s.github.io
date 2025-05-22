@@ -6,7 +6,7 @@
   <link href="https://jiang07shuai06.github.io/atom.xml" rel="self"/>
   
   <link href="https://jiang07shuai06.github.io/"/>
-  <updated>2025-05-15T08:37:18.850Z</updated>
+  <updated>2025-05-22T02:40:59.666Z</updated>
   <id>https://jiang07shuai06.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字签名</title>
+    <link href="https://jiang07shuai06.github.io/2025/05/22/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/"/>
+    <id>https://jiang07shuai06.github.io/2025/05/22/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</id>
+    <published>2025-05-22T04:44:06.000Z</published>
+    <updated>2025-05-22T02:40:59.666Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote><p>使用混合加密（前文），我们可以防止传输的消息被窃听<br>如何确定传输的消息没有被篡改过，又如何确定是对方发送的呢？<br>这个时候就要使用–数字签名🌶</p></blockquote><h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol><li>首先，签名者会使用散列算法(如SHA-256、SHA-3、MD5等)对原始文件内容进行计算，得到一个固定长度的数据摘要(即散列值&#x2F;哈希值)</li><li>然后，签名者使用自己的私钥对这个散列值进行加密，生成数字签名</li><li>验证者收到文件和数字签名后，使用签名者的公钥解密数字签名，得到原始散列值</li><li>验证者同时用相同的散列算法计算收到文件的散列值，并与解密得到的散列值比对</li><li>如果两个散列值完全相同，则验证通过，证明文件未被篡改且确实由持有私钥的签名者签名<br>![数字签名](<a class="link"   href="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.png" >https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.png<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> &#x3D;865x)</li></ol><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul><li>比对一致则表明消息是对方发过来的，也没有被篡改过</li><li>接收端使用发送端公钥能解密签名，表明收到的就是发送端的消息</li><li>散列值一致则保证了消息没有被篡改过</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数字签名&quot;&gt;&lt;a href=&quot;#数字签名&quot; class=&quot;headerlink&quot; title=&quot;数字签名&quot;&gt;&lt;/a&gt;数字签名&lt;/h1&gt;&lt;h2 id=&quot;思考&quot;&gt;&lt;a href=&quot;#思考&quot; class=&quot;headerlink&quot; title=&quot;思考&quot;&gt;&lt;/a&gt;思考&lt;/h</summary>
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://jiang07shuai06.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="云上安全" scheme="https://jiang07shuai06.github.io/tags/%E4%BA%91%E4%B8%8A%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对称秘钥和非对称秘钥</title>
+    <link href="https://jiang07shuai06.github.io/2025/05/22/%E5%AF%B9%E7%A7%B0%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
+    <id>https://jiang07shuai06.github.io/2025/05/22/%E5%AF%B9%E7%A7%B0%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</id>
+    <published>2025-05-22T02:22:07.000Z</published>
+    <updated>2025-05-22T02:40:23.625Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对称加密和非对称加密"><a href="#对称加密和非对称加密" class="headerlink" title="对称加密和非对称加密"></a>对称加密和非对称加密</h1><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>对称加密使用同一个秘钥来进行加密和解密<br>对称加密算法有：RC4、DES、3DES、<mark>AES</mark> 等<br>加密算法根据同一个秘钥将明文加密成密文，或将密文解密成明文 </p><blockquote><p>问题来了<br>对称秘钥如果明文传输，可以被第三方拿到，使得第三方也可以解密密文<br>对称秘钥如果密文传输，接收端如何解密秘钥</p></blockquote><p>![](<a class="link"   href="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E5%AF%B9%E7%A7%B0%E7%A7%98%E9%92%A5.png" >https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E5%AF%B9%E7%A7%B0%E7%A7%98%E9%92%A5.png<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> &#x3D;666x)</p><h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>非对称加密使用公钥和私钥两种秘钥，它们并不是同一个秘钥<br>公钥用来加密明文，私钥用来解密密文<br>公钥一般是公开的，都能拿到，私钥只有接收端才有，不公开<br>非对称加密算法有：<mark>RSA</mark>、DH 等</p><blockquote><p>非对称加密的加解密速度比对称加密要慢很多</p></blockquote><p>工作原理：发送端使用公钥加密，接收端使用私钥解密；公钥和私钥由接收端生成，公钥明文传输给发送端，发送端收到后使用公钥将数据加密后发送到接收端，接收端使用私钥解密，公钥被第三方截获也没关系，因为第三方没有私钥</p><p>![非对称秘钥](<a class="link"   href="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E9%9D%9E%E5%AF%B9%E7%A7%B0%E7%A7%98%E9%92%A5.png" >https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E9%9D%9E%E5%AF%B9%E7%A7%B0%E7%A7%98%E9%92%A5.png<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> &#x3D;502x)</p><h2 id="混合加密"><a href="#混合加密" class="headerlink" title="混合加密"></a>混合加密</h2><p>对称加密不能安全的传输密钥，但是加解密速度块<br>非对陈加密可以安全的传输密钥，但是加解密速度慢<br>🤔🤔<br>使用非对称加密解决对称秘钥的传输问题，使用对称加密传输数据</p><blockquote><p>SSL&#x2F;TLS 使用的就是混合加密</p></blockquote><p>![混合加密](<a class="link"   href="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86.png" >https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86.png<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> &#x3D;654x)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;对称加密和非对称加密&quot;&gt;&lt;a href=&quot;#对称加密和非对称加密&quot; class=&quot;headerlink&quot; title=&quot;对称加密和非对称加密&quot;&gt;&lt;/a&gt;对称加密和非对称加密&lt;/h1&gt;&lt;h2 id=&quot;对称加密&quot;&gt;&lt;a href=&quot;#对称加密&quot; class=&quot;head</summary>
+      
+    
+    
+    
+    <category term="技术分享" scheme="https://jiang07shuai06.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="云上安全" scheme="https://jiang07shuai06.github.io/tags/%E4%BA%91%E4%B8%8A%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis的三种模式解析</title>
