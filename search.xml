@@ -1,115 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HTTP基础概念</title>
-    <url>/2024/12/24/HTTP/</url>
-    <content><![CDATA[<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>超文本传输协议（HTTP）是一个用于传输超媒体文档（例如HTML）的应用层协议。它是为了Web浏览器与Web服务器之间的通信而设计的，但也可以用于其他目的（例如API通信）。HTTP是无状态协议，这意味着服务器不会在两个请求之间保留任何数据（状态）。</p>
-<hr>
-<h3 id="什么是HTTP请求？"><a href="#什么是HTTP请求？" class="headerlink" title="什么是HTTP请求？"></a>什么是HTTP请求？</h3><p>HTTP请求是客户端（比如浏览器）向服务器请求获取资源（如网页、图片、文件等）时发送的消息。<br>包含如下几个关键部分：</p>
-<p><strong>请求行</strong>：包含请求方法（如 GET 用于获取资源、POST用于提交数据）、请求的 URL（统一资源定位符，指定要访问的资源位置）和 HTTP 协议版本。</p>
-<p><strong>请求头</strong>：包含一些额外的信息，像用户代理（表明请求的客户端类型）、接受的内容类型（如接受 HTML、JSON 等）、缓存控制信息等，用于告诉服务器更多关于请求的细节。</p>
-<p><strong>请求体（可选）</strong>：主要用于 POST 等请求方法，在其中放置要发送给服务器的数据，例如表单数据。</p>
-<p>首先要明确，不是所有的 HTTP 请求方法都使用请求体。最常用于发送请求体的方法是 POST 和 PUT。</p>
-<ul>
-<li><p>POST 方法通常用于向服务器提交数据来创建新的资源。例如，当用户在网页上填写一个注册表单并提交时，浏览器会使用 POST 方法将表单数据发送到服务器的注册接口。</p>
-</li>
-<li><p>PUT 方法主要用于更新服务器上已有的资源。假设一个在线文档编辑应用，用户修改了文档内容后，点击保存，应用可能会使用 PUT 方法将更新后的文档内容发送到服务器来更新文档资源。</p>
-</li>
-</ul>
-<h4 id="http请求方法"><a href="#http请求方法" class="headerlink" title="http请求方法"></a>http请求方法</h4><p>在 HTTP 通信过程中，每个 HTTP请求报文中都会包含一个 HTTP请求方法，用于告知客户端向服务器端请求执行某些具体的操作，下面列举几项常用的 HTTP请求方法</p>
-<table>
-<thead>
-<tr>
-<th align="center">HTTP 请求方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">GET</td>
-<td align="left">用于客户端请求指定资源信息，并返回指定资源实体</td>
-</tr>
-<tr>
-<td align="center">HEAD</td>
-<td align="left">和 GET 相似，但其不需要服务器响应请求的资源，而返回响应首部（只需要响应首部即可，就是告诉我有或者没有，不需要缓存界面给我）</td>
-</tr>
-<tr>
-<td align="center">POST</td>
-<td align="left">基于HTML表单向服务器提交数据，服务i去通常需要存储此数据，通常存放在 MySQL 这种关系型数据库中</td>
-</tr>
-<tr>
-<td align="center">PUT</td>
-<td align="left">与 GET 相反，是向服务器发送资源的，服务器通常需要存储次资源，这就好比你要把一个新的商品送到商店并让商店存储起来。</td>
-</tr>
-<tr>
-<td align="center">DELETE</td>
-<td align="left">请求服务器端删除URL指定的资源</td>
-</tr>
-<tr>
-<td align="center">MOVE</td>
-<td align="left">请求服务器将指定的页面移至另一个网络地址</td>
-</tr>
-<tr>
-<td align="center">OPTIONS</td>
-<td align="left">探测服务器端对请求的URL所支持使用的请求方法</td>
-</tr>
-<tr>
-<td align="center">TRACE</td>
-<td align="left">跟踪一次请求中间所经历的代理服务器、防火墙或网关等。主要用于调试。</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>扩展：推荐一款功能强大的的 API开发和测试工具—— postman</p>
-</blockquote>
-<h4 id="http协议版本"><a href="#http协议版本" class="headerlink" title="http协议版本"></a>http协议版本</h4><p><strong>http 0.9</strong>：<br>最初的版本，仅支持 GET 方法，主要用于获取 HTML 文档，没有其他的概念，响应也很简单，只会返回 HTML 文档内容，没有状态码、响应头这些内容。</p>
-<p><strong>http 1.0</strong>：<br>相较于0.9版本新增了多种请求方法，如 POST、HEAD等。<br>引入了请求头和响应头，用于传递关于请求和响应的更多信息；例如，通过请求头中的 “Accept” 字段，客户端可以告诉服务器它能够接受的内容类型；响应头中的 “Content - Type” 字段则告知客户端返回内容的类型。<br>支持多种内容类型，包括文本、图像、音频等多种格式的文件传输。</p>
-<p><strong>http 1.1</strong>：</p>
-<p>目前广泛使用的版本之一，在1.0版本中，每次请求&#x2F;响应完成后，连接就会关闭。而1.1版本中允许在一次 TCP 连接中进行多次请求&#x2F;响应，减少了建立和关闭连接的开销，提高了网络传输效率。<br>新增了更多的请求方法，如 PUT、DELETE 等。<br>引入了管道化技术，允许客户端在等待一个请求的响应时发送下一个请求。不过，管道化在实际应用中因为一些复杂的原因（如请求顺序依赖等）没有得到广泛使用。</p>
-<p><strong>http 2.0</strong>：<br>采用二进制格式进行数据传输，相比于1.1版本的文本格式，二进制格式更高效，解析速度更快。<br>支持头部压缩，通过通过 HPB 算法压缩头部，减少传输量。<br>多路复用是2.0版本的核心特性之一，它允许在一个 TCP 连接上同时传输多个请求和响应，这些请求和响应可以交错进行，而不需要像1.1版本那样排队等待。</p>
-<h3 id="什么是-HTTP-响应？"><a href="#什么是-HTTP-响应？" class="headerlink" title="什么是 HTTP 响应？"></a>什么是 HTTP 响应？</h3><p>HTTP 响应是服务器对客户端 HTTP 请求的回复消息。当客户端（如浏览器）向服务器发送请求，请求获取网页、文件或执行某种操作后，服务器会处理该请求，并返回一个 HTTP 响应来告知客户端请求的结果。<br>组成部分：<br><strong>状态码</strong>：这是 HTTP 响应中非常关键的部分，它是一个三位数字的代码，用于表示服务器对请求的处理状态。<br>例如，最常见的状态码 200，表示请求成功，服务器已成功处理并返回请求的资源。而 404 状态码则表示请求的资源未找到，可能是客户端请求的 URL 有误或者服务器上不存在该资源。另外还有 500 状态码，通常意味着服务器在处理请求时发生了内部错误。</p>
-<p><strong>响应头</strong>：响应头包含了关于响应的各种附加信息。<br>比如 “Content - Type” 字段，它告诉客户端返回内容的类型，如 “text&#x2F;html” 表示返回的是 HTML 文档，“application&#x2F;json” 表示返回的是 JSON 格式的数据。还有 “Content - Length” 字段，用于指示响应体的长度（字节数）。此外，响应头还可能包含缓存控制信息（如 “Cache - Control”），用于指导客户端是否缓存以及如何缓存响应内容。</p>
-<p><strong>响应体</strong>：响应体是服务器返回的实际内容，是客户端真正需要的部分。<br>如果客户端请求的是一个网页，那么响应体就是网页的 HTML 代码；如果请求的是一张图片，响应体就是图片的二进制数据；若请求的是一个 API 接口获取数据，响应体可能是 JSON 或 XML 格式的数据，这些数据包含了客户端所请求的信息。</p>
-<h4 id="http的状态码"><a href="#http的状态码" class="headerlink" title="http的状态码"></a>http的状态码</h4><table>
-<thead>
-<tr>
-<th align="center">状态码</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1XX</td>
-<td align="center">信息性状态码</td>
-</tr>
-<tr>
-<td align="center">2XX</td>
-<td align="center">成功状态码</td>
-</tr>
-<tr>
-<td align="center">3XX</td>
-<td align="center">重定向状态码</td>
-</tr>
-<tr>
-<td align="center">4XX</td>
-<td align="center">客户端错误</td>
-</tr>
-<tr>
-<td align="center">5XX</td>
-<td align="center">服务端错误</td>
-</tr>
-</tbody></table>
-<h3 id="Web客户端访问Web服务器的工作流程（以网络浏览器为例）"><a href="#Web客户端访问Web服务器的工作流程（以网络浏览器为例）" class="headerlink" title="Web客户端访问Web服务器的工作流程（以网络浏览器为例）"></a>Web客户端访问Web服务器的工作流程（以网络浏览器为例）</h3><p><strong>导航和启动</strong><br>用户在浏览器中输入网址或者点击其他通信中的链接后，浏览器通过 DNS 查找网址并将请求发送到该网址</p>
-<p><strong>客户端向服务器发送 HTTP 请求报文</strong><br>客户端（如浏览器）构建一个请求报文发送给 Web 服务器，请求报文的第一行标识了网站的根页面，指示了HTTP的版本（1.1&#x2F;1.0&#x2F;…），还有请求实体（如浏览器）的信息。请求报文发送到Web服务器后，即可由服务器读取并生成响应。</p>
-<p><strong>服务器将 HTTP 响应发回给客户端</strong><br>Web服务器收到请求后，就会生成响应报文并将其返回给浏览器（客户端），浏览器接收并读取响应报文。报文的第一行通常是响应代码如 “200 OK”，表示 Web服务器可以成功响应请求。HTTP响应报文确切再现了请求报文的格式，并包含一系列成为“响应标头”的行，这些行提供有关响应的信息。</p>
-<p><strong>浏览器呈现报文</strong><br>浏览器呈现响应报文，并在浏览器中显示网页</p>
-<h3 id="衡量一个-web网址的访问量指标：pv、uv、ip"><a href="#衡量一个-web网址的访问量指标：pv、uv、ip" class="headerlink" title="衡量一个 web网址的访问量指标：pv、uv、ip"></a>衡量一个 web网址的访问量指标：pv、uv、ip</h3><p>pv：网站的点击量<br>uv：网站的访问用户数——COOKIE，cookie值相同的表示是一个用户<br>ip：网站的访问ip数，即有多少台客户机访问</p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>网络协议</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+Github==&gt;个人博客</title>
     <url>/2024/10/20/Hexo-Github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h3 id="这篇文章是对于使用-hexo-和-github-搭建个人博客的思路梳理"><a href="#这篇文章是对于使用-hexo-和-github-搭建个人博客的思路梳理" class="headerlink" title="这篇文章是对于使用 hexo 和 github 搭建个人博客的思路梳理"></a>这篇文章是对于使用 hexo 和 github 搭建个人博客的思路梳理</h3><h4 id="1、下载-node-js"><a href="#1、下载-node-js" class="headerlink" title="1、下载 node.js"></a>1、下载 node.js</h4><p><a class="link"   href="https://nodejs.org/zh-cn" >https://nodejs.org/zh-cn<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
@@ -159,72 +50,6 @@
       </categories>
       <tags>
         <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外星人入侵</title>
-    <url>/2024/10/04/%E5%A4%96%E6%98%9F%E4%BA%BA%E5%85%A5%E4%BE%B5/</url>
-    <content><![CDATA[<h4 id="遇到的问题及注意事项："><a href="#遇到的问题及注意事项：" class="headerlink" title="遇到的问题及注意事项："></a>遇到的问题及注意事项：</h4><ul>
-<li><p>编写计分模块 <code>scoreborad.py</code> 时，变量引用错误，没搞清楚使用的是值传递还是引用传递</p>
-<p>  参考链接  <a class="link"   href="https://blog.csdn.net/hohaizx/article/details/78427406" >https://blog.csdn.net/hohaizx/article/details/78427406<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-</li>
-<li><p>飞船数量与设置模块 <code>settings.py</code> 中的飞船设置相关</p>
-</li>
-<li><p>外星人、子弹、飞船移动速度以及幅度与设置模块 <code>settings.py</code> 中的 <code>initialize_dynamic_settings</code> 函数设置相关</p>
-</li>
-</ul>
-<h4 id="参考资料及源码："><a href="#参考资料及源码：" class="headerlink" title="参考资料及源码："></a>参考资料及源码：</h4><ol>
-<li><p>参考书籍《Python编程——从入门到实践》</p>
-</li>
-<li><p>参考教程链接  <a class="link"   href="https://www.modb.pro/db/49581" >https://www.modb.pro/db/49581<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-</li>
-<li><p>通过百度网盘分享的文件：alien_invasion_2.0.zip</p>
-<p> 链接：<a class="link"   href="https://pan.baidu.com/s/1NTkG7Mk_5sw4uzQLVU8ieQ?pwd=byte" >https://pan.baidu.com/s/1NTkG7Mk_5sw4uzQLVU8ieQ?pwd=byte<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> </p>
-<p> 提取码：byte</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>天气预报自动推送</title>
-    <url>/2024/10/07/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%8E%A8%E9%80%81/</url>
-    <content><![CDATA[<h4 id="一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）"><a href="#一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）" class="headerlink" title="一、申请微信测试公众号（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）"></a>一、申请微信测试公众号（<a class="link"   href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login%EF%BC%89" >https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h4><ol>
-<li><p>获取到这四个值 appID, appSecret, openId, template_id</p>
-</li>
-<li><p>想让谁收消息，谁就用微信扫二维码，刷新页面后即出现在用户列表，获取微信号（openId）</p>
-</li>
-<li><p>新增测试模板获得  template_id（模板ID）</p>
-<p> 天气模板：</p>
- <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">今天：&#123;&#123;date.DATA&#125;&#125;</span><br><span class="line">地区：&#123;&#123;region.DATA&#125;&#125;</span><br><span class="line">天气：&#123;&#123;weather.DATA&#125;&#125;</span><br><span class="line">气温：&#123;&#123;temp.DATA&#125;&#125;</span><br><span class="line">风向：&#123;&#123;wind_dir.DATA&#125;&#125;</span><br><span class="line">对你说的话：&#123;&#123;today_note.DATA&#125;&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p> 课程表模板：</p>
- <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">消息：&#123;&#123;message.DATA&#125;&#125;</span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<hr>
-<h4 id="二、配置代码"><a href="#二、配置代码" class="headerlink" title="二、配置代码"></a>二、配置代码</h4><ol>
-<li><p>将上面获得的几个值填入代码这几行，启动即可</p>
- <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">appID = &quot;&quot;</span><br><span class="line">appSecret = &quot;&quot;</span><br><span class="line">#收信人ID即 用户列表中的微信号，见上文</span><br><span class="line">openId = &quot;&quot;</span><br><span class="line"># 天气预报模板ID</span><br><span class="line">weather_template_id = &quot;&quot;</span><br><span class="line"># 时间表模板ID</span><br><span class="line">timetable_template_id = &quot;&quot;</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>定时任务（根据需求进行修改这几行）</p>
- <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">schedule.every().day.at(&quot;08:00&quot;).do(weather_report, &quot;北京&quot;)</span><br><span class="line"># schedule.every().monday.at(&quot;13:30&quot;).do(timetable, &quot;还有15分钟开始下午的课程&quot;)</span><br><span class="line">while True:</span><br><span class="line">   schedule.run_pending()</span><br><span class="line">   time.sleep(1)</span><br></pre></td></tr></table></figure></div>
-</li>
-<li><p>完成代码如下</p>
- <div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装依赖 pip3 install requests html5lib bs4 schedule</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从测试号信息获取</span></span><br><span class="line">appID = <span class="string">&quot;wx1c904b832908e3d7&quot;</span></span><br><span class="line">appSecret = <span class="string">&quot;024e7a99b9bd93e4ec2ba0e61cb99869&quot;</span></span><br><span class="line"><span class="comment">#收信人ID即 用户列表中的微信号，见上文</span></span><br><span class="line">openId = <span class="string">&quot;oLg156sEhzpHX3f6OKG6HaCTid9s&quot;</span></span><br><span class="line"><span class="comment"># 天气预报模板ID</span></span><br><span class="line">weather_template_id = <span class="string">&quot;T00eYDomN3GOBXOTqTYhX27Nqp-vCdDO2xHKAK1ElH8&quot;</span></span><br><span class="line"><span class="comment"># 时间表模板ID</span></span><br><span class="line">timetable_template_id = <span class="string">&quot;kg29LwRP6--uo6Xq3mm-aRyJFaF_Pe2SsnUjYq23YpA&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_weather</span>(<span class="params">my_city</span>):</span><br><span class="line">    urls = [<span class="string">&quot;http://www.weather.com.cn/textFC/hb.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/db.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hd.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hz.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hn.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/xb.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/xn.shtml&quot;</span></span><br><span class="line">            ]</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        resp = requests.get(url)</span><br><span class="line">        text = resp.content.decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">        soup = BeautifulSoup(text, <span class="string">&#x27;html5lib&#x27;</span>)</span><br><span class="line">        div_conMidtab = soup.find(<span class="string">&quot;div&quot;</span>, class_=<span class="string">&quot;conMidtab&quot;</span>)</span><br><span class="line">        tables = div_conMidtab.find_all(<span class="string">&quot;table&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> table <span class="keyword">in</span> tables:</span><br><span class="line">            trs = table.find_all(<span class="string">&quot;tr&quot;</span>)[<span class="number">2</span>:]</span><br><span class="line">            <span class="keyword">for</span> index, tr <span class="keyword">in</span> <span class="built_in">enumerate</span>(trs):</span><br><span class="line">                tds = tr.find_all(<span class="string">&quot;td&quot;</span>)</span><br><span class="line">                <span class="comment"># 这里倒着数，因为每个省会的td结构跟其他不一样</span></span><br><span class="line">                city_td = tds[-<span class="number">8</span>]</span><br><span class="line">                this_city = <span class="built_in">list</span>(city_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                <span class="keyword">if</span> this_city == my_city:</span><br><span class="line"></span><br><span class="line">                    high_temp_td = tds[-<span class="number">5</span>]</span><br><span class="line">                    low_temp_td = tds[-<span class="number">2</span>]</span><br><span class="line">                    weather_type_day_td = tds[-<span class="number">7</span>]</span><br><span class="line">                    weather_type_night_td = tds[-<span class="number">4</span>]</span><br><span class="line">                    wind_td_day = tds[-<span class="number">6</span>]</span><br><span class="line">                    wind_td_day_night = tds[-<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">                    high_temp = <span class="built_in">list</span>(high_temp_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    low_temp = <span class="built_in">list</span>(low_temp_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    weather_typ_day = <span class="built_in">list</span>(weather_type_day_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    weather_type_night = <span class="built_in">list</span>(weather_type_night_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">                    wind_day = <span class="built_in">list</span>(wind_td_day.stripped_strings)[<span class="number">0</span>] + <span class="built_in">list</span>(wind_td_day.stripped_strings)[<span class="number">1</span>]</span><br><span class="line">                    wind_night = <span class="built_in">list</span>(wind_td_day_night.stripped_strings)[<span class="number">0</span>] + <span class="built_in">list</span>(wind_td_day_night.stripped_strings)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 如果没有白天的数据就使用夜间的</span></span><br><span class="line">                    temp = <span class="string">f&quot;<span class="subst">&#123;low_temp&#125;</span>——<span class="subst">&#123;high_temp&#125;</span>摄氏度&quot;</span> <span class="keyword">if</span> high_temp != <span class="string">&quot;-&quot;</span> <span class="keyword">else</span> <span class="string">f&quot;<span class="subst">&#123;low_temp&#125;</span>摄氏度&quot;</span></span><br><span class="line">                    weather_typ = weather_typ_day <span class="keyword">if</span> weather_typ_day != <span class="string">&quot;-&quot;</span> <span class="keyword">else</span> weather_type_night</span><br><span class="line">                    wind = <span class="string">f&quot;<span class="subst">&#123;wind_day&#125;</span>&quot;</span> <span class="keyword">if</span> wind_day != <span class="string">&quot;--&quot;</span> <span class="keyword">else</span> <span class="string">f&quot;<span class="subst">&#123;wind_night&#125;</span>&quot;</span></span><br><span class="line">                    <span class="keyword">return</span> this_city, temp, weather_typ, wind</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_access_token</span>():</span><br><span class="line">    <span class="comment"># 获取access token的url</span></span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=&#123;&#125;&amp;secret=&#123;&#125;&#x27;</span> \</span><br><span class="line">        .<span class="built_in">format</span>(appID.strip(), appSecret.strip())</span><br><span class="line">    response = requests.get(url).json()</span><br><span class="line">    <span class="built_in">print</span>(response)</span><br><span class="line">    access_token = response.get(<span class="string">&#x27;access_token&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> access_token</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_daily_love</span>():</span><br><span class="line">    <span class="comment"># 每日一句情话</span></span><br><span class="line">    url = <span class="string">&quot;https://api.lovelive.tools/api/SweetNothings/Serialization/Json&quot;</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    all_dict = json.loads(r.text)</span><br><span class="line">    sentence = all_dict[<span class="string">&#x27;returnObj&#x27;</span>][<span class="number">0</span>]</span><br><span class="line">    daily_love = sentence</span><br><span class="line">    <span class="keyword">return</span> daily_love</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_weather</span>(<span class="params">access_token, weather</span>):</span><br><span class="line">    <span class="comment"># touser 就是 openID</span></span><br><span class="line">    <span class="comment"># template_id 就是模板ID</span></span><br><span class="line">    <span class="comment"># url 就是点击模板跳转的url</span></span><br><span class="line">    <span class="comment"># data就按这种格式写，time和text就是之前&#123;&#123;time.DATA&#125;&#125;中的那个time，value就是你要替换DATA的值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> datetime</span><br><span class="line">    today = datetime.date.today()</span><br><span class="line">    today_str = today.strftime(<span class="string">&quot;%Y年%m月%d日&quot;</span>)</span><br><span class="line"></span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;touser&quot;</span>: openId.strip(),</span><br><span class="line">        <span class="string">&quot;template_id&quot;</span>: weather_template_id.strip(),</span><br><span class="line">        <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://weixin.qq.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;data&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;date&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: today_str</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;region&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">0</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;weather&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">2</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;temp&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">1</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;wind_dir&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">3</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;today_note&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: get_daily_love()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(access_token)</span><br><span class="line">    <span class="built_in">print</span>(requests.post(url, json.dumps(body)).text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_timetable</span>(<span class="params">access_token, message</span>):</span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;touser&quot;</span>: openId,</span><br><span class="line">        <span class="string">&quot;template_id&quot;</span>: timetable_template_id.strip(),</span><br><span class="line">        <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://weixin.qq.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;data&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;message&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: message</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(access_token)</span><br><span class="line">    <span class="built_in">print</span>(requests.post(url, json.dumps(body)).text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">weather_report</span>(<span class="params">city</span>):</span><br><span class="line">    <span class="comment"># 1.获取access_token</span></span><br><span class="line">    access_token = get_access_token()</span><br><span class="line">    <span class="comment"># 2. 获取天气</span></span><br><span class="line">    weather = get_weather(city)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;天气信息： <span class="subst">&#123;weather&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="comment"># 3. 发送消息</span></span><br><span class="line">    send_weather(access_token, weather)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timetable</span>(<span class="params">message</span>):</span><br><span class="line">    <span class="comment"># 1.获取access_token</span></span><br><span class="line">    access_token = get_access_token()</span><br><span class="line">    <span class="comment"># 3. 发送消息</span></span><br><span class="line">    send_timetable(access_token, message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    weather_report(<span class="string">&quot;河北&quot;</span>)</span><br><span class="line">    <span class="comment"># timetable(&quot;第二教学楼十分钟后开始英语课&quot;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># schedule.every().day.at(&quot;08:00&quot;).do(weather_report, &quot;北京&quot;)</span></span><br><span class="line">    <span class="comment"># schedule.every().monday.at(&quot;13:30&quot;).do(timetable, &quot;还有15分钟开始下午的课程&quot;)</span></span><br><span class="line">    <span class="comment">#while True:</span></span><br><span class="line">    <span class="comment">#   schedule.run_pending()</span></span><br><span class="line">    <span class="comment">#   time.sleep(1)</span></span><br></pre></td></tr></table></figure></div></li>
-</ol>
-<p>原创文档链接：<a class="link"   href="https://www.bilibili.com/read/cv28928153/" >https://www.bilibili.com/read/cv28928153/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<p>原创视频链接：<br><a class="link"   href="https://www.bilibili.com/video/BV1Ng4y1r7EP/?spm_id_from=333.880.my_history.page.click&vd_source=576ff0210b33e8823a0a538d3f79f11f" >https://www.bilibili.com/video/BV1Ng4y1r7EP/?spm_id_from=333.880.my_history.page.click&amp;vd_source=576ff0210b33e8823a0a538d3f79f11f<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -344,81 +169,12 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
       </tags>
   </entry>
   <entry>
-    <title>堡垒机(1) | 概念&amp;部署</title>
-    <url>/2025/01/12/%E5%A0%A1%E5%9E%92%E6%9C%BA-1-%E6%A6%82%E5%BF%B5-%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>堡垒机是一种用于单点登录、集中授权、访问控制和操作审计的安全设备，也被称为跳板机。它就像网络中的 “安全卫士”，主要作用是对内部网络中运维人员的操作进行集中管理和控制，是实现运维安全的核心设备。<br>主要功能：身份认证、访问控制、操作审计、会话管理<br><br><br>Jumpserver 是一款由python编写开源的跳板机（堡垒机）系统，实现了跳板机应有的功能。基于ssh协议来管理，客户端无需安装agent。<br>&nbsp;<br>在公司中，分配人员服务器权限也是相当方便，如：来一个新人，在Jumpserver分配Jumpserver账号即可，人员离职，在Jumpserver删掉人员账号即可。无需担心人员离职留下后门，当然前提是检查防火墙，只允许Jumpserver服务器有其他服务器的ssh的权限。<br><br><br>目前市面上已经有很多jumpserver产品提供使用，这里就介绍最广泛的一款。<br>官方网址：<a class="link"   href="https://www.jumpserver.org/" >https://www.jumpserver.org/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>&nbsp;<br><br></p>
-<h4 id="JumpServer-部署"><a href="#JumpServer-部署" class="headerlink" title="JumpServer 部署"></a>JumpServer 部署</h4><p>参考官方部署文档：<a class="link"   href="https://docs.jumpserver.org/zh/master/install/setup_by_fast/" >https://docs.jumpserver.org/zh/master/install/setup_by_fast/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>&nbsp;<br>这款也是基于docker运行的，不管一键部署，还是手动部署都是docker，手动部署区别主要是改密码、IP、端口自定义之类的。默认的其实已经很好没必要改了。相对来所，搭建还是比较容易的，官方脚本一步到位。<br><br><br>&nbsp;<br>由于魔法的原因可能会无法连接到 GitHub，这里可以考虑使用以下命令</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">curl -sSL https://resource.fit2cloud.com/jumpserver/jumpserver/releases/latest/download/quick_start.sh | bash</span><br></pre></td></tr></table></figure></div>
-
-<blockquote>
-<p>注：4核8G （最低）且可以访问互联网的 64 位 Linux 主机</p>
-</blockquote>
-<br>
-当然，如果需要离线安装也可以到下方 URI 获取软件包后，进行手动部署
-
-<p><a class="link"   href="https://community.fit2cloud.com/#/products/jumpserver/downloads" >https://community.fit2cloud.com/#/products/jumpserver/downloads<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<br>
-下面是我部署完成后显示的信息
-
-<p>&nbsp;</p>
-<ol>
-<li><p>可以使用如下命令启动, 然后访问<br>cd &#x2F;opt&#x2F;jumpserver-installer-v4.5.0<br>.&#x2F;jmsctl.sh start</p>
-</li>
-<li><p>其它一些管理命令<br>.&#x2F;jmsctl.sh stop<br>.&#x2F;jmsctl.sh restart<br>.&#x2F;jmsctl.sh backup<br>.&#x2F;jmsctl.sh upgrade<br>更多还有一些命令, 你可以 .&#x2F;jmsctl.sh –help 来了解</p>
-</li>
-<li><p>Web 访问<br><a class="link"   href="http://192.168.241.66/" >http://192.168.241.66:80<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>默认用户: admin  默认密码: ChangeMe</p>
-</li>
-</ol>
-<p> 更多信息<br>官方网站: <a class="link"   href="https://www.jumpserver.org/" >https://www.jumpserver.org/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>官方文档: <a class="link"   href="https://docs.jumpserver.org/" >https://docs.jumpserver.org/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>堡垒机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL的三种安装方式示例（包成功😋）</title>
+    <title>MySQL的三种安装方式</title>
     <url>/2025/05/14/MySQL%E7%9A%84%E4%B8%89%E7%A7%8D%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="定义和历史背景"><a href="#定义和历史背景" class="headerlink" title="定义和历史背景"></a>定义和历史背景</h4><p>  MySQL 是一个广泛使用的开源关系型数据库管理系统（RDBMS）。它最初由瑞典 MySQL AB 公司开发，在 2008 年被 Sun Microsystems 收购，之后 Oracle 又收购了 Sun Microsystems，MySQL 也随之成为 Oracle 旗下的产品。</p>
-<h4 id="数据库存储结构"><a href="#数据库存储结构" class="headerlink" title="数据库存储结构"></a>数据库存储结构</h4><p>数据库（Database）：MySQL 是数据库的集合，每个数据库用于存储相关的数据。</p>
-<p>表（Table）：数据库包含一个或多个表，表是数据存储的基本单位。表由行（Row）和列（Column）组成。</p>
-<p>   索引（Index）：索引是一种特殊的数据结构，用于提高数据库的查询性能。它类似于书籍的目录，通过创建 索引，可以更快地定位和检索表中的数据。</p>
-<h4 id="SQL语言支持"><a href="#SQL语言支持" class="headerlink" title="SQL语言支持"></a>SQL语言支持</h4><ul>
-<li>数据定义语言（DDL）：用于定义数据库的结构，包括创建（CREATE）、修改（ALTER）和删除（DROR）数据库、表、索引等。</li>
-<li>数据操作语言（DML）：用于操作表中的数据，主要包括插入（INSERT）、查询（SELECT）、更新（UPDATE）和删除（DELETE）操作。</li>
-<li>数据控制语言（DCL）：主要用于管理数据库用户的权限，如GRANT（授予权限）和REVOKE（收回权限）</li>
-</ul>
-<h4 id="MySQL逻辑结构与Linux系统对比"><a href="#MySQL逻辑结构与Linux系统对比" class="headerlink" title="MySQL逻辑结构与Linux系统对比:"></a>MySQL逻辑结构与Linux系统对比:</h4><table>
-<thead>
-<tr>
-<th>MySQL</th>
-<th>Linux</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>库</td>
-<td>目录</td>
-</tr>
-<tr>
-<td>show databases;</td>
-<td>ls -l &#x2F;</td>
-</tr>
-<tr>
-<td>use mysql</td>
-<td>cd &#x2F;mysql</td>
-</tr>
-<tr>
-<td>表</td>
-<td>普通文件</td>
-</tr>
-<tr>
-<td>show tables</td>
-<td>ls</td>
-</tr>
-</tbody></table>
-<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>（这里使用机器为 Rocky Linux 9.4 ）</p>
+    <content><![CDATA[<p>GO GO GO</p>
+<blockquote>
+<p>这里使用机器为 Rocky Linux 9.4 </p>
+</blockquote>
 <h4 id="二进制安装"><a href="#二进制安装" class="headerlink" title="二进制安装"></a>二进制安装</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 从官方选择对应的 mysql 源码包</span></span><br><span class="line"><span class="comment"># https://dev.mysql.com/downloads/mysql/mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz</span></span><br><span class="line"><span class="comment"># 上传下载好的压缩包到指定服务器 </span></span><br><span class="line">wget https://dev.mysql.com/get/Downloads/mysql/mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz</span><br><span class="line">tar -xvf mysql-8.4.3-linux-glibc2.28-x86_64.tar.xz </span><br><span class="line"><span class="built_in">mv</span> mysql-8.4.3-linux-glibc2.28-x86_64 /usr/local/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建mysql用户，因为启动mysql需要该用户</span></span><br><span class="line">groupadd mysql</span><br><span class="line">useradd -r -g mysql -s /bin/false mysql -M </span><br><span class="line"></span><br><span class="line"><span class="comment">## 创建数据目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /data/mysql</span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /data/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /data/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化</span></span><br><span class="line">/usr/local/mysql/bin/mysqld --initialize-insecure --basedir=/usr/local/mysql --datadir=/data/mysql --user=mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 以服务的方式启动（传统方式，可选）</span></span><br><span class="line"><span class="comment"># cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql.server</span></span><br><span class="line"><span class="comment"># systemctl daemon-reload</span></span><br><span class="line"><span class="comment"># /etc/init.d/mysql.server start</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 添加环境变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=$PATH:/usr/local/mysql/bin&#x27;</span> &gt;&gt; /etc/profile</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line"><span class="comment">#################################################################</span></span><br><span class="line"><span class="comment">## 将传统的以服务启动的方式改为 systemd 进行管理</span></span><br><span class="line"><span class="comment">## 首先关闭 selinux ！！！</span></span><br><span class="line"><span class="comment">## 在/etc/systemd/system/目录下配置文件 mysql.service</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/systemd/system/mysql.service &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=MySQL Server</span></span><br><span class="line"><span class="string">After=network.target syslog.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">User=mysql</span></span><br><span class="line"><span class="string">Group=mysql</span></span><br><span class="line"><span class="string">ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf</span></span><br><span class="line"><span class="string">ExecReload=/bin/kill -HUP $MAINPID</span></span><br><span class="line"><span class="string">Restart=on-failure</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target    </span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 配置默认文件缺失</span></span><br><span class="line"><span class="comment"># MySQL 不会在二进制安装时自动生成 my.cnf 文件，因为它无法确定需要的具体配置。这就意味着你得手动创建该文件。</span></span><br><span class="line"><span class="comment"># 在 ExecStart 行中启动命令后添加 --defaults-file=/etc/my.cnf 参数进行配置文件关联</span></span><br><span class="line"><span class="comment"># 创建 my.cnf 文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/my.cnf &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">[mysqld]</span></span><br><span class="line"><span class="string"># 基本目录</span></span><br><span class="line"><span class="string">basedir = /usr/local/mysql</span></span><br><span class="line"><span class="string"># 数据目录</span></span><br><span class="line"><span class="string">datadir = /data/mysql</span></span><br><span class="line"><span class="string"># PID文件路径</span></span><br><span class="line"><span class="string">pid-file = /data/mysql/mysql.pid</span></span><br><span class="line"><span class="string"># 套接字文件路径</span></span><br><span class="line"><span class="string">socket = /tmp/mysql.sock</span></span><br><span class="line"><span class="string"># 监听端口</span></span><br><span class="line"><span class="string">port = 3306</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 其他常见配置</span></span><br><span class="line"><span class="string"># 字符集设置</span></span><br><span class="line"><span class="string">character-set-server = utf8mb4</span></span><br><span class="line"><span class="string">collation-server = utf8mb4_unicode_ci</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 日志相关配置</span></span><br><span class="line"><span class="string">log-error = /data/mysql/error.log</span></span><br><span class="line"><span class="string">general_log = 0</span></span><br><span class="line"><span class="string">general_log_file = /data/mysql/general.log</span></span><br><span class="line"><span class="string">slow_query_log = 1</span></span><br><span class="line"><span class="string">slow_query_log_file = /data/mysql/slow.log</span></span><br><span class="line"><span class="string">long_query_time = 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 内存相关配置</span></span><br><span class="line"><span class="string">innodb_buffer_pool_size = 128M</span></span><br><span class="line"><span class="string">key_buffer_size = 16M</span></span><br><span class="line"><span class="string">EOF</span>   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 赋权</span></span><br><span class="line"><span class="built_in">chmod</span> 644 /etc/my.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart mysql</span><br><span class="line">systemctl status mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下命令可查看 MySQL 所有的配置选项及其当前值</span></span><br><span class="line">SHOW VARIABLES;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="从源码编译安装"><a href="#从源码编译安装" class="headerlink" title="从源码编译安装"></a>从源码编译安装</h4><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 从官方选择对应的 mysql 源码包</span></span><br><span class="line"><span class="comment"># https://dev.mysql.com/downloads/mysql/</span></span><br><span class="line"><span class="comment"># 上传下载好的压缩包到指定服务器</span></span><br><span class="line">wget https://dev.mysql.com/get/Downloads/mysql/mysql-8.4.3.tar.gz</span><br><span class="line">tar -zxvf mysql-8.4.3.tar.gz</span><br><span class="line"><span class="built_in">cd</span> mysql-8.4.3</span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载必要的软件包</span></span><br><span class="line">yum install -y gcc gcc-c++ make cmake ncurses-devel bison wget tar bzip2 zlib zlib-devel gcc-toolset-12-gcc gcc-toolset-12-gcc-c++ gcc-toolset-12-binutils gcc-toolset-12-annobin-annocheck gcc-toolset-12-annobin-plugin-gcc openssl openssl-devel </span><br><span class="line"><span class="built_in">sudo</span> dnf install -y rpcgen</span><br><span class="line"></span><br><span class="line"><span class="comment">## 安装libtirpc-devel</span></span><br><span class="line">yum install -y libtirpc-devel <span class="comment"># 这个一般不行</span></span><br><span class="line"></span><br><span class="line">wget https://rpmfind.net/linux/centos-stream/9-stream/BaseOS/x86_64/os/Packages/libtirpc-1.3.3-2.el9.x86_64.rpm</span><br><span class="line">rpm -ivh libtirpc-1.3.3-2.el9.x86_64.rpm</span><br><span class="line"><span class="comment"># sudo rpm -Uvh --oldpackage libtirpc-1.3.3-2.el9.x86_64.rpm    -U:有则升级，无则安装。</span></span><br><span class="line"></span><br><span class="line">wget https://rpmfind.net/linux/centos-stream/9-stream/CRB/x86_64/os/Packages/libtirpc-devel-1.3.3-2.el9.x86_64.rpm</span><br><span class="line">rpm -ivh libtirpc-devel-1.3.3-2.el9.x86_64.rpm </span><br><span class="line"></span><br><span class="line"><span class="comment"># 依赖环境</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line">wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2</span><br><span class="line">tar -jxvf boost_1_77_0.tar.bz2</span><br><span class="line"></span><br><span class="line"><span class="comment"># build 是个空目录</span></span><br><span class="line"><span class="built_in">cd</span> mysql-8.4.3/build/</span><br><span class="line"><span class="comment"># 到MySQL源码的build目录（个人新建）并运行cmake命令，以继续配置和编译MySQL：</span></span><br><span class="line">cmake .. -DWITH_BOOST=/root/boost_1_77_0 \</span><br><span class="line">         -DWITH_ZLIB=bundled \</span><br><span class="line">         -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \</span><br><span class="line">         -DMYSQL_DATADIR=/usr/local/mysql/data \</span><br><span class="line">         -DSYSCONFDIR=/etc \</span><br><span class="line">         -DWITH_INNOBASE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_PARTITION_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_FEDERATED_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DWITH_ARCHIVE_STORAGE_ENGINE=1 \</span><br><span class="line">         -DENABLED_LOCAL_INFILE=1 \</span><br><span class="line">         -DWITH_SSL=system \</span><br><span class="line">         -DWITH_LIBWRAP=0 \</span><br><span class="line">         -DMYSQL_UNIX_ADDR=/var/lib/mysql/mysql.sock</span><br><span class="line">         </span><br><span class="line"><span class="comment"># 编译 MySQL</span></span><br><span class="line">make</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装 MySQL</span></span><br><span class="line">make install </span><br><span class="line"></span><br><span class="line"><span class="comment">## 开始配置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建mysql用户和配置权限</span></span><br><span class="line"><span class="comment"># 创建一个名为 mysql 的用户组</span></span><br><span class="line">groupadd mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># -r表示创建一个系统用户（system user），这种用户通常用于运行服务或系统进程，没有登录权限。</span></span><br><span class="line"><span class="comment"># -g mysql：指定用户的主组为 mysql，让该用户属于前面创建的 mysql 用户组。</span></span><br><span class="line"><span class="comment"># -s /bin/false：指定用户的默认登录 shell 为 /bin/false，这样做的目的是不允许该用户登录系统，进一步增强安全性。</span></span><br><span class="line">useradd -r -g mysql -s /bin/false mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## /etc/my.cnf</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/my.cnf &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[mysqld]  # 表示这是 MySQL 服务的配置部分</span></span><br><span class="line"><span class="string">basedir = /usr/local/mysql  # 设置 MySQL 的安装目录为 /usr/local/mysql</span></span><br><span class="line"><span class="string">datadir = /usr/local/mysql/data  # 设置 MySQL 的数据存储目录为 /usr/local/mysql/data</span></span><br><span class="line"><span class="string">port = 3306  # 指定 MySQL 服务监听的端口号为 3306，这是 MySQL 的默认端口</span></span><br><span class="line"><span class="string">socket = /var/lib/mysql/mysql.sock  # 指定 MySQL 进程的 socket 文件路径，用于本地客户端连接</span></span><br><span class="line"><span class="string">user = mysql  # 指定运行 MySQL 服务的用户为 mysql，增加安全性</span></span><br><span class="line"><span class="string">symbolic-links = 0  # 禁用符号链接功能，增加系统安全性</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">log_error = /var/log/mysql/error.log  # 设置错误日志文件的路径，记录 MySQL 服务的错误信息</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">general_log = 1  # 启用通用查询日志，记录所有执行的查询语句</span></span><br><span class="line"><span class="string">general_log_file = /var/log/mysql/general.log  # 设置通用查询日志的存储路径</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">slow_query_log = 1  # 启用慢查询日志，用于记录执行时间较长的查询</span></span><br><span class="line"><span class="string">slow_query_log_file = /var/log/mysql/slow.log  # 指定慢查询日志文件的路径</span></span><br><span class="line"><span class="string">long_query_time = 2  # 设置慢查询的阈值，记录执行时间超过 2 秒的查询</span></span><br><span class="line"><span class="string"># pid-file = /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string">pid-file=/usr/local/mysql/mysqld.pid </span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/log/mysql</span><br><span class="line"><span class="comment"># mkdir -p /var/run/mysqld</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /var/lib/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># mysql logs for /var/log/mysql</span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/log/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /var/log/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># /usr/local/mysql 安装主目录</span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /usr/local/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /usr/local/mysql</span><br><span class="line"><span class="built_in">mkdir</span> /usr/local/mysql/data</span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /usr/local/mysql/data</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /usr/local/mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># /var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="comment"># chown mysql:mysql /var/run/mysqld</span></span><br><span class="line"><span class="comment"># chmod 755 /var/run/mysqld</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /var/lib/mysql/mysql.sock </span></span><br><span class="line"><span class="built_in">chown</span> -R mysql:mysql /var/lib/mysql</span><br><span class="line"><span class="built_in">chmod</span> -R 750 /var/lib/mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 初始化</span></span><br><span class="line">/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --initialize-insecure</span><br><span class="line"></span><br><span class="line"><span class="comment">## 启动 mysql 服务</span></span><br><span class="line"><span class="built_in">cat</span> &gt; /etc/systemd/system/mysql.service&lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=MySQL Server</span></span><br><span class="line"><span class="string">After=network.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=forking</span></span><br><span class="line"><span class="string">ExecStart=/usr/local/mysql/bin/mysqld --defaults-file=/etc/my.cnf --daemonize --pid-file=/var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string">ExecStop=/usr/local/mysql/bin/mysqladmin --defaults-file=/etc/my.cnf shutdown</span></span><br><span class="line"><span class="string">User=mysql</span></span><br><span class="line"><span class="string">Group=mysql</span></span><br><span class="line"><span class="string">PIDFile=/var/run/mysqld/mysqld.pid</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=multi-user.target</span></span><br><span class="line"><span class="string">EOF</span></span><br><span class="line"></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> mysql</span><br><span class="line">systemctl start mysql</span><br><span class="line"></span><br><span class="line"><span class="comment">## 设置个root密码</span></span><br><span class="line">/usr/local/mysql/bin/mysql_secure_installation</span><br><span class="line"><span class="comment"># Ag#@190&#125;678900 # 我的密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加到系统环境变量</span></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/mysql/bin</span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"></span><br><span class="line">mysql -uroot -pAg#@190&#125;678900</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建个远程管理用户</span></span><br><span class="line"><span class="comment"># 开启远程连接</span></span><br><span class="line">CREATE USER <span class="string">&#x27;sxs&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;Ag#@190&#125;678900&#x27;</span>;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO <span class="string">&#x27;sxs&#x27;</span>@<span class="string">&#x27;%&#x27;</span> WITH GRANT OPTION;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></div>
@@ -633,54 +389,9 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
       </tags>
   </entry>
   <entry>
-    <title>数字签名</title>
-    <url>/2025/05/22/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</url>
-    <content><![CDATA[<h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote>
-<p>使用混合加密（前文），我们可以防止传输的消息被窃听<br>如何确定传输的消息没有被篡改过，又如何确定是对方发送的呢？<br>这个时候就要使用–数字签名🌶</p>
-</blockquote>
-<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><ol>
-<li><p>首先，签名者会使用散列算法(如SHA-256、SHA-3、MD5等)对原始文件内容进行计算，得到一个固定长度的数据摘要(即散列值&#x2F;哈希值)</p>
-</li>
-<li><p>然后，签名者使用自己的私钥对这个散列值进行加密，生成数字签名</p>
-</li>
-<li><p>验证者收到文件和数字签名后，使用签名者的公钥解密数字签名，得到原始散列值</p>
-</li>
-<li><p>验证者同时用相同的散列算法计算收到文件的散列值，并与解密得到的散列值比对</p>
-</li>
-<li><p>如果两个散列值完全相同，则验证通过，证明文件未被篡改且确实由持有私钥的签名者签名</p>
-</li>
-</ol>
-  <div style="text-align: center;">
-    <figure class="image-caption"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://byte76-1325194493.cos.ap-beijing.myqcloud.com/test/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.png"
-                      alt="数字签名" width="100%" 
-                ><figcaption>数字签名</figcaption></figure>
-  </div>
-
-
-
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><ul>
-<li>比对一致则表明消息是对方发过来的，也没有被篡改过</li>
-<li>接收端使用发送端公钥能解密签名，表明收到的就是发送端的消息</li>
-<li>散列值一致则保证了消息没有被篡改过</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>云上安全</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对称秘钥和非对称秘钥</title>
     <url>/2025/05/22/%E5%AF%B9%E7%A7%B0%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</url>
-    <content><![CDATA[<h1 id="对称加密和非对称加密"><a href="#对称加密和非对称加密" class="headerlink" title="对称加密和非对称加密"></a>对称加密和非对称加密</h1><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>对称加密使用同一个秘钥来进行加密和解密<br>对称加密算法有：RC4、DES、3DES、<mark>AES</mark> 等<br>加密算法根据同一个秘钥将明文加密成密文，或将密文解密成明文 </p>
-<blockquote>
-<p>问题来了<br>对称秘钥如果明文传输，可以被第三方拿到，使得第三方也可以解密密文<br>对称秘钥如果密文传输，接收端如何解密秘钥</p>
-</blockquote>
+    <content><![CDATA[<h2 id="对称加密和非对称加密"><a href="#对称加密和非对称加密" class="headerlink" title="对称加密和非对称加密"></a>对称加密和非对称加密</h2><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>对称加密使用同一个秘钥来进行加密和解密<br>对称加密算法有：RC4、DES、3DES、<mark>AES</mark> 等<br>加密算法根据同一个秘钥将明文加密成密文，或将密文解密成明文 </p>
 <div style="text-align: center;">
   <figure class="image-caption"><img  
                      lazyload
@@ -690,12 +401,10 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
                 ><figcaption>对称加密</figcaption></figure>
 </div>
 
-
-
-
-
-
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>非对称加密使用公钥和私钥两种秘钥，它们并不是同一个秘钥<br>公钥用来加密明文，私钥用来解密密文<br>公钥一般是公开的，都能拿到，私钥只有接收端才有，不公开<br>非对称加密算法有：<mark>RSA</mark>、DH 等</p>
+<blockquote>
+<p>问题来了<br>    对称秘钥如果明文传输，可以被第三方拿到，使得第三方也可以解密密文<br>    对称秘钥如果密文传输，接收端如何解密秘钥</p>
+</blockquote>
+<h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>非对称加密使用公钥和私钥两种秘钥，它们并不是同一个秘钥<br>公钥用来加密明文，私钥用来解密密文<br>公钥一般是公开的，都能拿到，私钥只有接收端才有，不公开<br>非对称加密算法有：<mark>RSA</mark>、DH 等</p>
 <blockquote>
 <p>非对称加密的加解密速度比对称加密要慢很多</p>
 </blockquote>
@@ -712,7 +421,7 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
 
 
 
-<h2 id="混合加密"><a href="#混合加密" class="headerlink" title="混合加密"></a>混合加密</h2><p>对称加密不能安全的传输密钥，但是加解密速度块<br>非对陈加密可以安全的传输密钥，但是加解密速度慢<br>🤔🤔<br>使用非对称加密解决对称秘钥的传输问题，使用对称加密传输数据</p>
+<h3 id="混合加密"><a href="#混合加密" class="headerlink" title="混合加密"></a>混合加密</h3><p>对称加密不能安全的传输密钥，但是加解密速度块<br>非对陈加密可以安全的传输密钥，但是加解密速度慢<br>🤔🤔<br>使用非对称加密解决对称秘钥的传输问题，使用对称加密传输数据</p>
 <blockquote>
 <p>SSL&#x2F;TLS 使用的就是混合加密</p>
 </blockquote>
@@ -729,7 +438,43 @@ netfilter 才是防火墙真正的安全框架（framework)，netfilter位于内
         <category>技术分享</category>
       </categories>
       <tags>
-        <tag>云上安全</tag>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>天气预报自动推送</title>
+    <url>/2024/10/07/%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81/</url>
+    <content><![CDATA[<h4 id="一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）"><a href="#一、申请微信测试公众号（https-mp-weixin-qq-com-debug-cgi-bin-sandbox-t-sandbox-login）" class="headerlink" title="一、申请微信测试公众号（https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）"></a>一、申请微信测试公众号（<a class="link"   href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login%EF%BC%89" >https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login）<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h4><ol>
+<li><p>获取到这四个值 appID, appSecret, openId, template_id</p>
+</li>
+<li><p>想让谁收消息，谁就用微信扫二维码，刷新页面后即出现在用户列表，获取微信号（openId）</p>
+</li>
+<li><p>新增测试模板获得  template_id（模板ID）</p>
+<p> 天气模板：</p>
+ <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">今天：&#123;&#123;date.DATA&#125;&#125;</span><br><span class="line">地区：&#123;&#123;region.DATA&#125;&#125;</span><br><span class="line">天气：&#123;&#123;weather.DATA&#125;&#125;</span><br><span class="line">气温：&#123;&#123;temp.DATA&#125;&#125;</span><br><span class="line">风向：&#123;&#123;wind_dir.DATA&#125;&#125;</span><br><span class="line">对你说的话：&#123;&#123;today_note.DATA&#125;&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p> 课程表模板：</p>
+ <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">消息：&#123;&#123;message.DATA&#125;&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<hr>
+<h4 id="二、配置代码"><a href="#二、配置代码" class="headerlink" title="二、配置代码"></a>二、配置代码</h4><ol>
+<li><p>将上面获得的几个值填入代码这几行，启动即可</p>
+ <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">appID = &quot;&quot;</span><br><span class="line">appSecret = &quot;&quot;</span><br><span class="line">#收信人ID即 用户列表中的微信号，见上文</span><br><span class="line">openId = &quot;&quot;</span><br><span class="line"># 天气预报模板ID</span><br><span class="line">weather_template_id = &quot;&quot;</span><br><span class="line"># 时间表模板ID</span><br><span class="line">timetable_template_id = &quot;&quot;</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>定时任务（根据需求进行修改这几行）</p>
+ <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">schedule.every().day.at(&quot;08:00&quot;).do(weather_report, &quot;北京&quot;)</span><br><span class="line"># schedule.every().monday.at(&quot;13:30&quot;).do(timetable, &quot;还有15分钟开始下午的课程&quot;)</span><br><span class="line">while True:</span><br><span class="line">   schedule.run_pending()</span><br><span class="line">   time.sleep(1)</span><br></pre></td></tr></table></figure></div>
+</li>
+<li><p>完成代码如下</p>
+ <div class="code-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装依赖 pip3 install requests html5lib bs4 schedule</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从测试号信息获取</span></span><br><span class="line">appID = <span class="string">&quot;wx1c904b832908e3d7&quot;</span></span><br><span class="line">appSecret = <span class="string">&quot;024e7a99b9bd93e4ec2ba0e61cb99869&quot;</span></span><br><span class="line"><span class="comment">#收信人ID即 用户列表中的微信号，见上文</span></span><br><span class="line">openId = <span class="string">&quot;oLg156sEhzpHX3f6OKG6HaCTid9s&quot;</span></span><br><span class="line"><span class="comment"># 天气预报模板ID</span></span><br><span class="line">weather_template_id = <span class="string">&quot;T00eYDomN3GOBXOTqTYhX27Nqp-vCdDO2xHKAK1ElH8&quot;</span></span><br><span class="line"><span class="comment"># 时间表模板ID</span></span><br><span class="line">timetable_template_id = <span class="string">&quot;kg29LwRP6--uo6Xq3mm-aRyJFaF_Pe2SsnUjYq23YpA&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_weather</span>(<span class="params">my_city</span>):</span><br><span class="line">    urls = [<span class="string">&quot;http://www.weather.com.cn/textFC/hb.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/db.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hd.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hz.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/hn.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/xb.shtml&quot;</span>,</span><br><span class="line">            <span class="string">&quot;http://www.weather.com.cn/textFC/xn.shtml&quot;</span></span><br><span class="line">            ]</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        resp = requests.get(url)</span><br><span class="line">        text = resp.content.decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">        soup = BeautifulSoup(text, <span class="string">&#x27;html5lib&#x27;</span>)</span><br><span class="line">        div_conMidtab = soup.find(<span class="string">&quot;div&quot;</span>, class_=<span class="string">&quot;conMidtab&quot;</span>)</span><br><span class="line">        tables = div_conMidtab.find_all(<span class="string">&quot;table&quot;</span>)</span><br><span class="line">        <span class="keyword">for</span> table <span class="keyword">in</span> tables:</span><br><span class="line">            trs = table.find_all(<span class="string">&quot;tr&quot;</span>)[<span class="number">2</span>:]</span><br><span class="line">            <span class="keyword">for</span> index, tr <span class="keyword">in</span> <span class="built_in">enumerate</span>(trs):</span><br><span class="line">                tds = tr.find_all(<span class="string">&quot;td&quot;</span>)</span><br><span class="line">                <span class="comment"># 这里倒着数，因为每个省会的td结构跟其他不一样</span></span><br><span class="line">                city_td = tds[-<span class="number">8</span>]</span><br><span class="line">                this_city = <span class="built_in">list</span>(city_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                <span class="keyword">if</span> this_city == my_city:</span><br><span class="line"></span><br><span class="line">                    high_temp_td = tds[-<span class="number">5</span>]</span><br><span class="line">                    low_temp_td = tds[-<span class="number">2</span>]</span><br><span class="line">                    weather_type_day_td = tds[-<span class="number">7</span>]</span><br><span class="line">                    weather_type_night_td = tds[-<span class="number">4</span>]</span><br><span class="line">                    wind_td_day = tds[-<span class="number">6</span>]</span><br><span class="line">                    wind_td_day_night = tds[-<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">                    high_temp = <span class="built_in">list</span>(high_temp_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    low_temp = <span class="built_in">list</span>(low_temp_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    weather_typ_day = <span class="built_in">list</span>(weather_type_day_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line">                    weather_type_night = <span class="built_in">list</span>(weather_type_night_td.stripped_strings)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">                    wind_day = <span class="built_in">list</span>(wind_td_day.stripped_strings)[<span class="number">0</span>] + <span class="built_in">list</span>(wind_td_day.stripped_strings)[<span class="number">1</span>]</span><br><span class="line">                    wind_night = <span class="built_in">list</span>(wind_td_day_night.stripped_strings)[<span class="number">0</span>] + <span class="built_in">list</span>(wind_td_day_night.stripped_strings)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 如果没有白天的数据就使用夜间的</span></span><br><span class="line">                    temp = <span class="string">f&quot;<span class="subst">&#123;low_temp&#125;</span>——<span class="subst">&#123;high_temp&#125;</span>摄氏度&quot;</span> <span class="keyword">if</span> high_temp != <span class="string">&quot;-&quot;</span> <span class="keyword">else</span> <span class="string">f&quot;<span class="subst">&#123;low_temp&#125;</span>摄氏度&quot;</span></span><br><span class="line">                    weather_typ = weather_typ_day <span class="keyword">if</span> weather_typ_day != <span class="string">&quot;-&quot;</span> <span class="keyword">else</span> weather_type_night</span><br><span class="line">                    wind = <span class="string">f&quot;<span class="subst">&#123;wind_day&#125;</span>&quot;</span> <span class="keyword">if</span> wind_day != <span class="string">&quot;--&quot;</span> <span class="keyword">else</span> <span class="string">f&quot;<span class="subst">&#123;wind_night&#125;</span>&quot;</span></span><br><span class="line">                    <span class="keyword">return</span> this_city, temp, weather_typ, wind</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_access_token</span>():</span><br><span class="line">    <span class="comment"># 获取access token的url</span></span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=&#123;&#125;&amp;secret=&#123;&#125;&#x27;</span> \</span><br><span class="line">        .<span class="built_in">format</span>(appID.strip(), appSecret.strip())</span><br><span class="line">    response = requests.get(url).json()</span><br><span class="line">    <span class="built_in">print</span>(response)</span><br><span class="line">    access_token = response.get(<span class="string">&#x27;access_token&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> access_token</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_daily_love</span>():</span><br><span class="line">    <span class="comment"># 每日一句情话</span></span><br><span class="line">    url = <span class="string">&quot;https://api.lovelive.tools/api/SweetNothings/Serialization/Json&quot;</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    all_dict = json.loads(r.text)</span><br><span class="line">    sentence = all_dict[<span class="string">&#x27;returnObj&#x27;</span>][<span class="number">0</span>]</span><br><span class="line">    daily_love = sentence</span><br><span class="line">    <span class="keyword">return</span> daily_love</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_weather</span>(<span class="params">access_token, weather</span>):</span><br><span class="line">    <span class="comment"># touser 就是 openID</span></span><br><span class="line">    <span class="comment"># template_id 就是模板ID</span></span><br><span class="line">    <span class="comment"># url 就是点击模板跳转的url</span></span><br><span class="line">    <span class="comment"># data就按这种格式写，time和text就是之前&#123;&#123;time.DATA&#125;&#125;中的那个time，value就是你要替换DATA的值</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> datetime</span><br><span class="line">    today = datetime.date.today()</span><br><span class="line">    today_str = today.strftime(<span class="string">&quot;%Y年%m月%d日&quot;</span>)</span><br><span class="line"></span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;touser&quot;</span>: openId.strip(),</span><br><span class="line">        <span class="string">&quot;template_id&quot;</span>: weather_template_id.strip(),</span><br><span class="line">        <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://weixin.qq.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;data&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;date&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: today_str</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;region&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">0</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;weather&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">2</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;temp&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">1</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;wind_dir&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: weather[<span class="number">3</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;today_note&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: get_daily_love()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(access_token)</span><br><span class="line">    <span class="built_in">print</span>(requests.post(url, json.dumps(body)).text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_timetable</span>(<span class="params">access_token, message</span>):</span><br><span class="line">    body = &#123;</span><br><span class="line">        <span class="string">&quot;touser&quot;</span>: openId,</span><br><span class="line">        <span class="string">&quot;template_id&quot;</span>: timetable_template_id.strip(),</span><br><span class="line">        <span class="string">&quot;url&quot;</span>: <span class="string">&quot;https://weixin.qq.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;data&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;message&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;value&quot;</span>: message</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    url = <span class="string">&#x27;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(access_token)</span><br><span class="line">    <span class="built_in">print</span>(requests.post(url, json.dumps(body)).text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">weather_report</span>(<span class="params">city</span>):</span><br><span class="line">    <span class="comment"># 1.获取access_token</span></span><br><span class="line">    access_token = get_access_token()</span><br><span class="line">    <span class="comment"># 2. 获取天气</span></span><br><span class="line">    weather = get_weather(city)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;天气信息： <span class="subst">&#123;weather&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="comment"># 3. 发送消息</span></span><br><span class="line">    send_weather(access_token, weather)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timetable</span>(<span class="params">message</span>):</span><br><span class="line">    <span class="comment"># 1.获取access_token</span></span><br><span class="line">    access_token = get_access_token()</span><br><span class="line">    <span class="comment"># 3. 发送消息</span></span><br><span class="line">    send_timetable(access_token, message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    weather_report(<span class="string">&quot;河北&quot;</span>)</span><br><span class="line">    <span class="comment"># timetable(&quot;第二教学楼十分钟后开始英语课&quot;)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># schedule.every().day.at(&quot;08:00&quot;).do(weather_report, &quot;北京&quot;)</span></span><br><span class="line">    <span class="comment"># schedule.every().monday.at(&quot;13:30&quot;).do(timetable, &quot;还有15分钟开始下午的课程&quot;)</span></span><br><span class="line">    <span class="comment">#while True:</span></span><br><span class="line">    <span class="comment">#   schedule.run_pending()</span></span><br><span class="line">    <span class="comment">#   time.sleep(1)</span></span><br></pre></td></tr></table></figure></div></li>
+</ol>
+<p>原创文档链接：<a class="link"   href="https://www.bilibili.com/read/cv28928153/" >https://www.bilibili.com/read/cv28928153/<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p>原创视频链接：<br><a class="link"   href="https://www.bilibili.com/video/BV1Ng4y1r7EP/?spm_id_from=333.880.my_history.page.click&vd_source=576ff0210b33e8823a0a538d3f79f11f" >https://www.bilibili.com/video/BV1Ng4y1r7EP/?spm_id_from=333.880.my_history.page.click&amp;vd_source=576ff0210b33e8823a0a538d3f79f11f<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
