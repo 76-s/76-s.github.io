@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fire.png">
+  <link rel="icon" href="/img/fire.svg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="76">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="华为交换机的操作系统叫做 VRP (Versatile Routing Platform)。主要有4个核心模式（视图）层层递进。  用户视图  标志：&lt;Huawei&gt;  状态：刚通过 Console 线或 SSH 登录进去后的默认状态 权限：只能做一些简单的“看”的操作，比如查看运行状态、Ping、Telnet   系统视图  标志：[Huawei]  状态：相当于“管理员模式”，可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HUAWEI-S-VLAN-01">
+<meta property="og:url" content="https://76-s.github.io/2026/02/19/HUAWEI-S-VLAN/index.html">
+<meta property="og:site_name" content="76‘s Blog">
+<meta property="og:description" content="华为交换机的操作系统叫做 VRP (Versatile Routing Platform)。主要有4个核心模式（视图）层层递进。  用户视图  标志：&lt;Huawei&gt;  状态：刚通过 Console 线或 SSH 登录进去后的默认状态 权限：只能做一些简单的“看”的操作，比如查看运行状态、Ping、Telnet   系统视图  标志：[Huawei]  状态：相当于“管理员模式”，可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-19T01:36:44.083Z">
+<meta property="article:modified_time" content="2026-02-19T01:39:50.699Z">
+<meta property="article:author" content="76">
+<meta property="article:tag" content="vlan">
+<meta property="article:tag" content="交换机">
+<meta property="article:tag" content="华为">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>HUAWEI-S-VLAN-01 - 76‘s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"76-s.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="76‘s Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>煎饼大侠🦸</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                <span>其他</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/" target="_self">
+                    
+                    <span>主题博客</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/guide/" target="_self">
+                    
+                    <span>配置指南</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="https://hexo.fluid-dev.com/docs/icon/" target="_self">
+                    
+                    <span>图标用法</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/sea.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="HUAWEI-S-VLAN-01"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-02-19 09:36" pubdate>
+          2026年2月19日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          670 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">HUAWEI-S-VLAN-01</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>华为交换机的操作系统叫做 <strong>VRP</strong> (Versatile Routing Platform)。主要有4个核心模式（视图）层层递进。</p>
+<ol>
+<li><p>用户视图</p>
+<ul>
+<li>标志：<code>&lt;Huawei&gt;</code> </li>
+<li>状态：刚通过 Console 线或 SSH 登录进去后的默认状态</li>
+<li>权限：只能做一些简单的“看”的操作，比如查看运行状态、Ping、Telnet</li>
+</ul>
+</li>
+<li><p>系统视图</p>
+<ul>
+<li>标志：<code>[Huawei]</code> </li>
+<li>状态：相当于“管理员模式”，可以进行全局配置（改设备名、创建 VLAN 等）</li>
+<li>如何进入：在用户视图输入 <code>system-view</code> (简写 <code>sys</code>)</li>
+</ul>
+</li>
+<li><p>接口视图</p>
+<ul>
+<li>标志：<code>[Huawei-GigabitEthernet0/0/1]</code> </li>
+<li>状态：针对某一个具体的网口进行配置（如开启关闭端口、配置 Access&#x2F;Trunk）</li>
+<li>如何进入： 在系统视图输入 <code>interface 接口类型 接口编号</code> (例如 <code>int g0/0/1</code>)</li>
+</ul>
+</li>
+<li><p>协议&#x2F;特定视图</p>
+<ul>
+<li><p>标志：<code>[Huawei-ospf-1]</code> 或 <code>[Huawei-vlan10]</code> </p>
+</li>
+<li><p>状态：进入具体的协议（如 OSPF、BGP）或功能（如 VLAN、User-interface）内部</p>
+</li>
+<li><p>如何进入：在系统视图输入协议名或功能名</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>VLAN</p>
+<ol>
+<li><p>配置PC的IP地址，并测试连通性是否正常</p>
+</li>
+<li><p>VLAN的划分</p>
+<ol>
+<li><p>创建vlan</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-keyword">system</span>-<span class="hljs-built_in">view</span>  <span class="hljs-meta">#进入系统视图</span><br>vlan <span class="hljs-number">10</span>  <span class="hljs-meta">#创建VLAN 10并进入VLAN视图</span><br>quit  <span class="hljs-meta"># 退回到系统视图</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>把接口划入到对应vlan</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">interface</span> Ethernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span>  <span class="hljs-meta">#进入具体接口视图</span><br>port link-type access  <span class="hljs-meta">#设置链路类型为 Access</span><br>port <span class="hljs-literal">default</span> vlan <span class="hljs-number">10</span>  <span class="hljs-meta">#将接口加入 VLAN 10</span><br>quit  <span class="hljs-meta">#配置完成，返回系统视图</span><br><span class="hljs-keyword">display</span> vlan  <span class="hljs-meta">#查看所有 VLAN 及包含的端口</span><br><span class="hljs-keyword">display</span> <span class="hljs-keyword">interface</span> Ethernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span>  <span class="hljs-meta">#查看具体某个接口的状态</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>华为交换机的配置是即时生效在内存里的，如果现在断电就白干了。需要在用户视图中输入 save 并确认。</p>
+</blockquote>
+<ol start="3">
+<li><p>进阶技巧</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-comment">#查看帮助</span><br><span class="hljs-attribute">vlan</span> ？<br><br><span class="hljs-comment">#批量创建vlan</span><br><span class="hljs-attribute">vlan</span> batch <span class="hljs-number">2</span> to <span class="hljs-number">6</span><br><br><span class="hljs-comment">#如果有10个接口都要划入VLAN 10，一个一个敲太慢了，可以用 端口组</span><br><span class="hljs-attribute">port</span>-group testgroup<br><span class="hljs-attribute">group</span>-member Ethernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">1</span> to Ethernet <span class="hljs-number">0</span>/<span class="hljs-number">0</span>/<span class="hljs-number">10</span><br><span class="hljs-attribute">port</span> link-type access<br><span class="hljs-attribute">port</span> default vlan <span class="hljs-number">10</span><br><br><span class="hljs-comment">#查看接口已有配置</span><br><span class="hljs-attribute">display</span> this<br><span class="hljs-comment"># 查看所有端口组</span><br><span class="hljs-attribute">display</span> port-group <span class="hljs-literal">all</span><br><span class="hljs-comment"># 查看VLAN摘要</span><br><span class="hljs-attribute">display</span> vlan summary<br><span class="hljs-comment"># 查看端口VLAN信息</span><br><span class="hljs-attribute">display</span> port vlan<br></code></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>华为交换机有一个特性：执行了 <code>undo vlan 10</code> ，虽然接口不再属于VLAN 10了，但接口里的 <code>port link-type access</code> 这一行配置可能还会留在那里。需要在接口视图输入 <code>undo port link-type</code> 取消。</p>
+<p>清除已有配置，均是在配置命令前加undo</p>
+</blockquote>
+<ol start="4">
+<li><p>问题思考</p>
+<ol>
+<li><p>为什么需要先设置链路类型，再将接口划入具体的vlan中？</p>
+<p>答：交换机内部处理的所有数据包都必须带着 VLAN 标签。但是电脑、打印机等终端设备通常不认识VLAN 标签。华为 VRP 系统非常严谨，如果不先定义接口模式，系统不知道该用哪种逻辑（Access、Trunk、Hybrid）来分配 VLAN。默认所有接口都属于VLAN 1。</p>
+</li>
+</ol>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-chain-item">网络</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/vlan/" class="print-no-link">#vlan</a>
+      
+        <a href="/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" class="print-no-link">#交换机</a>
+      
+        <a href="/tags/%E5%8D%8E%E4%B8%BA/" class="print-no-link">#华为</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>HUAWEI-S-VLAN-01</div>
+      <div>https://76-s.github.io/2026/02/19/HUAWEI-S-VLAN/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>76</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年2月19日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" title="windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/02/16/I:P:SaaS/" title="I/P/SaaS">
+                        <span class="hidden-mobile">I/P/SaaS</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="SOHUCS" sid='https://76-s.github.io/2026/02/19/HUAWEI-S-VLAN/'></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#SOHUCS', function() {
+      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
+        window.changyan.api.config({"appid":"cyympEDXp","appkey":"7f704d112a777291edd3f62afa150745"})
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
