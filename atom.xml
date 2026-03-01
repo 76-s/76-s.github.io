@@ -6,7 +6,7 @@
   <link href="https://76-s.github.io/atom.xml" rel="self"/>
   
   <link href="https://76-s.github.io/"/>
-  <updated>2026-02-28T05:59:26.985Z</updated>
+  <updated>2026-03-01T11:46:44.569Z</updated>
   <id>https://76-s.github.io/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL概述</title>
+    <link href="https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/"/>
+    <id>https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/</id>
+    <published>2026-03-01T10:13:14.000Z</published>
+    <updated>2026-03-01T11:46:44.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL) </p><table><thead><tr><th align="left">类别</th><th align="left">名称</th><th align="left">功能</th><th align="left">常用关键词</th></tr></thead><tbody><tr><td align="left"><strong>DDL</strong></td><td align="left">数据定义语言</td><td align="left">定义结构 (表、库、索引)</td><td align="left">CREATE, ALTER, DROP, TRUNCATE</td></tr><tr><td align="left"><strong>DQL</strong></td><td align="left">数据查询语言</td><td align="left">数据查询</td><td align="left">SELECT</td></tr><tr><td align="left"><strong>DML</strong></td><td align="left">数据操纵语言</td><td align="left">数据增、删、改</td><td align="left">INSERT, DELETE, UPDATE</td></tr><tr><td align="left"><strong>DCL</strong></td><td align="left">数据控制语言</td><td align="left">权限控制</td><td align="left">GRANT, REVOKE</td></tr><tr><td align="left"><strong>TCL</strong></td><td align="left">事务控制语言</td><td align="left">事务管理</td><td align="left">COMMIT, ROLLBACK, SAVEPOINT</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL) &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;类别&lt;/th&gt;
+&lt;th al</summary>
+      
+    
+    
+    
+    <category term="数据库" scheme="https://76-s.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="关系型数据库" scheme="https://76-s.github.io/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="SQL" scheme="https://76-s.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AD（活动目录）</title>
+    <link href="https://76-s.github.io/2026/03/01/AD%EF%BC%88%E6%B4%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%EF%BC%89/"/>
+    <id>https://76-s.github.io/2026/03/01/AD%EF%BC%88%E6%B4%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%EF%BC%89/</id>
+    <published>2026-03-01T05:14:52.000Z</published>
+    <updated>2026-03-01T11:44:40.585Z</updated>
+    
+    <content type="html"><![CDATA[<p>AD（Active Directory）是微软推出的一套用于 Windows 网络环境的 目录服务解决方案。是一系列服务的集合，用于管理用户、计算机权限和网络资源。</p><p>包含以下常用成员：</p><ol><li>AD DS (域服务)：最核心的服务，管理用户登录和资源访问。</li><li>AD CS (证书服务)： 负责发放和管理数字证书（类似企业内部的 CA）。</li><li>AD FS (联合身份验证服务)：实现单点登录 (SSO)，跨组织认证。</li><li>AD RMS (权限管理服务)：保护文档安全，防止信息泄露（如禁止转发邮件）。</li><li>AD LDS (轻量级目录服务)：为特定应用提供的精简版目录。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;AD（Active Directory）是微软推出的一套用于 Windows 网络环境的 目录服务解决方案。是一系列服务的集合，用于管理用户、计算机权限和网络资源。&lt;/p&gt;
+&lt;p&gt;包含以下常用成员：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AD DS (域服务)：最核心的服务，管理用户登</summary>
+      
+    
+    
+    
+    <category term="服务" scheme="https://76-s.github.io/categories/%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="ad" scheme="https://76-s.github.io/tags/ad/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LDAP（轻量级目录访问协议）</title>
+    <link href="https://76-s.github.io/2026/03/01/LDAP%EF%BC%88%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE%EF%BC%89/"/>
+    <id>https://76-s.github.io/2026/03/01/LDAP%EF%BC%88%E8%BD%BB%E9%87%8F%E7%BA%A7%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE%EF%BC%89/</id>
+    <published>2026-03-01T05:14:52.000Z</published>
+    <updated>2026-03-01T11:42:55.482Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p> Lightweight Directory Access Protocol，轻量级目录访问协议，于1993 年的密歇根大学，由 Tim Howes 及其团队发明。是X.500 DAP协议的轻量级替代版本，使用TCP&#x2F;IP而非OSI协议栈，设计初衷是让X.500目录服务通过更简单的TCP&#x2F;IP协议访问，降低网络资源消耗。是目录服务产品（如 AD、OpenLDAP）遵循的一套 通用标准通讯协议。</p><h5 id="在哪使用？"><a href="#在哪使用？" class="headerlink" title="在哪使用？"></a>在哪使用？</h5><p>统一身份认证，如企业组织架构管理、应用集成、VPN认证等。</p><h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><p>主要分为两个层面，结构定义和操作过程</p><p>结构定义：使用 DN 来精确定位一个对象，就像快递地址： <code>cn=张三,ou=技术部,dc=company,dc=com</code> </p><blockquote><p>条目：是LDAP服务器中的一条记录，具有全局唯一的“可分辨名称”（dn）;</p><p>可分辨名称（dn）：用于标识条目在目录的完整路径，主要包括 公共名称（cn）、组织单位（ou）和域名（dc）等属性。</p></blockquote><p>操作流程：</p><ol><li>建立连接：客户端连接到 LDAP 服务器的端口（默认 <strong>389</strong>，加密为 <strong>636</strong>）</li><li>身份绑定：客户端提供用户名和密码登录，证明自己有权查询</li><li>执行操作：Search (最常用)“帮我找一下技术部所有姓张的员工电话”，Add&#x2F;Modify&#x2F;Delete增删改用户信息</li><li>解绑：关闭连接</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;是什么？&quot;&gt;&lt;a href=&quot;#是什么？&quot; class=&quot;headerlink&quot; title=&quot;是什么？&quot;&gt;&lt;/a&gt;是什么？&lt;/h5&gt;&lt;p&gt; Lightweight Directory Access Protocol，轻量级目录访问协议，于1993 年的密歇根大学</summary>
+      
+    
+    
+    
+    <category term="网络" scheme="https://76-s.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="协议" scheme="https://76-s.github.io/tags/%E5%8D%8F%E8%AE%AE/"/>
+    
+    <category term="ldap" scheme="https://76-s.github.io/tags/ldap/"/>
+    
+  </entry>
   
   <entry>
     <title>nslookup 和 dig</title>
@@ -48,6 +132,34 @@
   </entry>
   
   <entry>
+    <title>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</title>
+    <link href="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
+    <published>2026-02-28T05:14:52.000Z</published>
+    <updated>2026-02-28T05:10:03.560Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h5><p>网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。</p><h5 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h5><p>检查设备的网络通信路径</p><h5 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h5><p>tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名</p><h5 id="状态判定："><a href="#状态判定：" class="headerlink" title="状态判定："></a>状态判定：</h5><ul><li><p>成功跟踪后会返回路径上的设备 IP；</p></li><li><p>*** 并非网络中断，而是中间设备拒绝响应 traceroute 的探测包，原因可能是：</p><ol><li>安全策略：企业级路由器和运营商骨干设备常配置 ACL，阻止 ICMP 消息出站以隐藏网络拓扑</li><li>ICMP限流：路由器为了防止 DDoS 攻击或过载，会对 ICMP Time Exceeded 消息进行限速甚至丢弃</li></ol></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h5&gt;&lt;p&gt;网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 T</summary>
+      
+    
+    
+    
+    <category term="网络" scheme="https://76-s.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络" scheme="https://76-s.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="tracert" scheme="https://76-s.github.io/tags/tracert/"/>
+    
+    <category term="traceroute" scheme="https://76-s.github.io/tags/traceroute/"/>
+    
+  </entry>
+  
+  <entry>
     <title>windows系统的 telnet 和 Mac/Linux系统的 nc 命令工具</title>
     <link href="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20telnet%20%E5%92%8C%20Mac:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20nc%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
     <id>https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20telnet%20%E5%92%8C%20Mac:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20nc%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
@@ -74,34 +186,6 @@
     <category term="telnet" scheme="https://76-s.github.io/tags/telnet/"/>
     
     <category term="nc" scheme="https://76-s.github.io/tags/nc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</title>
-    <link href="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
-    <published>2026-02-28T05:14:52.000Z</published>
-    <updated>2026-02-28T05:10:03.560Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h5><p>网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。</p><h5 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h5><p>检查设备的网络通信路径</p><h5 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h5><p>tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名</p><h5 id="状态判定："><a href="#状态判定：" class="headerlink" title="状态判定："></a>状态判定：</h5><ul><li><p>成功跟踪后会返回路径上的设备 IP；</p></li><li><p>*** 并非网络中断，而是中间设备拒绝响应 traceroute 的探测包，原因可能是：</p><ol><li>安全策略：企业级路由器和运营商骨干设备常配置 ACL，阻止 ICMP 消息出站以隐藏网络拓扑</li><li>ICMP限流：路由器为了防止 DDoS 攻击或过载，会对 ICMP Time Exceeded 消息进行限速甚至丢弃</li></ol></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h5&gt;&lt;p&gt;网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 T</summary>
-      
-    
-    
-    
-    <category term="网络" scheme="https://76-s.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="网络" scheme="https://76-s.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="tracert" scheme="https://76-s.github.io/tags/tracert/"/>
-    
-    <category term="traceroute" scheme="https://76-s.github.io/tags/traceroute/"/>
     
   </entry>
   
@@ -169,18 +253,17 @@
     <link href="https://76-s.github.io/2026/02/15/TCPvsUDP/"/>
     <id>https://76-s.github.io/2026/02/15/TCPvsUDP/</id>
     <published>2026-02-15T05:14:52.000Z</published>
-    <updated>2026-02-13T09:50:40.801Z</updated>
+    <updated>2026-03-01T11:25:57.459Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>TCP（传输控制协议）就像“打电话”</p><ul><li>在传输数据前必须要通过“三次握手”建立连接，通过seq号、ack号、超时重传机制保障可靠传输；</li><li>拥有滑动窗口和拥塞控制算法，能根据网络状况动态调整发送速率，防止网络拥塞。</li></ul></li><li><p>UDP（用户数据报协议）就像“邮寄”</p><ul><li>无需建立连接，可以在任何时候发送数据报文，没有建立连接的延迟，但是不保证数据的可靠性；</li><li>无流量控制，无论网络是否拥堵，都会按照应用层给定的速率发送数据，容易导致丢包，但保证了数据的实时性。</li></ul></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<p>TCP（传输控制协议）就像“打电话”，是面向连接的可靠传输协议，通过确认重传机制保证数据完整；</p><p>UDP（用户数据报协议）就像“邮寄”，是无连接的不可靠传输协议，直接发送数据不保证可靠性但效率更高。</p><hr>]]></content>
     
     
       
       
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;TCP（传输控制协议）就像“打电话”&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在传输数据前必须要通过“三次握手”建立连接，通过seq号、ack号、超时重传机制保障可靠传输；&lt;/li&gt;
-&lt;li&gt;拥有滑动窗口和拥塞控制算法，能根据网络状况动态调整发送速率，防止网络拥塞。&lt;/</summary>
+    <summary type="html">&lt;p&gt;TCP（传输控制协议）就像“打电话”，是面向连接的可靠传输协议，通过确认重传机制保证数据完整；&lt;/p&gt;
+&lt;p&gt;UDP（用户数据报协议）就像“邮寄”，是无连接的不可靠传输协议，直接发送数据不保证可靠性但效率更高。&lt;/p&gt;
+&lt;hr&gt;
+</summary>
       
     
     

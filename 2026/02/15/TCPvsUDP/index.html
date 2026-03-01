@@ -21,15 +21,15 @@
   <meta name="author" content="76">
   <meta name="keywords" content="">
   
-    <meta name="description" content="TCP（传输控制协议）就像“打电话”  在传输数据前必须要通过“三次握手”建立连接，通过seq号、ack号、超时重传机制保障可靠传输； 拥有滑动窗口和拥塞控制算法，能根据网络状况动态调整发送速率，防止网络拥塞。   UDP（用户数据报协议）就像“邮寄”  无需建立连接，可以在任何时候发送数据报文，没有建立连接的延迟，但是不保证数据的可靠性； 无流量控制，无论网络是否拥堵，都会按照应用层给定的速率">
+    <meta name="description" content="TCP（传输控制协议）就像“打电话”，是面向连接的可靠传输协议，通过确认重传机制保证数据完整； UDP（用户数据报协议）就像“邮寄”，是无连接的不可靠传输协议，直接发送数据不保证可靠性但效率更高。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP和UDP的区别">
 <meta property="og:url" content="https://76-s.github.io/2026/02/15/TCPvsUDP/index.html">
 <meta property="og:site_name" content="76‘s Blog">
-<meta property="og:description" content="TCP（传输控制协议）就像“打电话”  在传输数据前必须要通过“三次握手”建立连接，通过seq号、ack号、超时重传机制保障可靠传输； 拥有滑动窗口和拥塞控制算法，能根据网络状况动态调整发送速率，防止网络拥塞。   UDP（用户数据报协议）就像“邮寄”  无需建立连接，可以在任何时候发送数据报文，没有建立连接的延迟，但是不保证数据的可靠性； 无流量控制，无论网络是否拥堵，都会按照应用层给定的速率">
+<meta property="og:description" content="TCP（传输控制协议）就像“打电话”，是面向连接的可靠传输协议，通过确认重传机制保证数据完整； UDP（用户数据报协议）就像“邮寄”，是无连接的不可靠传输协议，直接发送数据不保证可靠性但效率更高。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-15T05:14:52.000Z">
-<meta property="article:modified_time" content="2026-02-13T09:50:40.801Z">
+<meta property="article:modified_time" content="2026-03-01T11:25:57.459Z">
 <meta property="article:author" content="76">
 <meta property="article:tag" content="tcp">
 <meta property="article:tag" content="udp">
@@ -269,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          179 字
+          79 字
         
       </span>
     
@@ -280,7 +280,7 @@
         
         
         
-          2 分钟
+          1 分钟
         
       </span>
     
@@ -322,20 +322,8 @@
             
               <div class="markdown-body">
                 
-                <ul>
-<li><p>TCP（传输控制协议）就像“打电话”</p>
-<ul>
-<li>在传输数据前必须要通过“三次握手”建立连接，通过seq号、ack号、超时重传机制保障可靠传输；</li>
-<li>拥有滑动窗口和拥塞控制算法，能根据网络状况动态调整发送速率，防止网络拥塞。</li>
-</ul>
-</li>
-<li><p>UDP（用户数据报协议）就像“邮寄”</p>
-<ul>
-<li>无需建立连接，可以在任何时候发送数据报文，没有建立连接的延迟，但是不保证数据的可靠性；</li>
-<li>无流量控制，无论网络是否拥堵，都会按照应用层给定的速率发送数据，容易导致丢包，但保证了数据的实时性。</li>
-</ul>
-</li>
-</ul>
+                <p>TCP（传输控制协议）就像“打电话”，是面向连接的可靠传输协议，通过确认重传机制保证数据完整；</p>
+<p>UDP（用户数据报协议）就像“邮寄”，是无连接的不可靠传输协议，直接发送数据不保证可靠性但效率更高。</p>
 <hr>
 
                 

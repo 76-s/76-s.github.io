@@ -21,24 +21,25 @@
   <meta name="author" content="76">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="MD文章模版">
-<meta property="og:url" content="https://76-s.github.io/2026/02/14/MD%E6%96%87%E7%AB%A0%E6%A8%A1%E7%89%88/index.html">
+    <meta name="description" content="SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL)     类别 名称 功能 常用关键词    DDL 数据定义语言 定义结构 (表、库、索引) CREATE, ALTER, DROP, TRUNCATE   DQL 数据查询语言 数据查询 SELECT   DML 数据操纵语言 数据增、删">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL概述">
+<meta property="og:url" content="https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="76‘s Blog">
+<meta property="og:description" content="SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL)     类别 名称 功能 常用关键词    DDL 数据定义语言 定义结构 (表、库、索引) CREATE, ALTER, DROP, TRUNCATE   DQL 数据查询语言 数据查询 SELECT   DML 数据操纵语言 数据增、删">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://76-s.github.io/img/start.png">
-<meta property="article:published_time" content="2026-02-14T05:14:52.000Z">
-<meta property="article:modified_time" content="2026-02-14T01:14:41.166Z">
+<meta property="article:published_time" content="2026-03-01T10:13:14.000Z">
+<meta property="article:modified_time" content="2026-03-01T11:46:44.569Z">
 <meta property="article:author" content="76">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="关系型数据库">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://76-s.github.io/img/start.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>MD文章模版 - 76‘s Blog</title>
+  <title>SQL概述 - 76‘s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -239,13 +240,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/start.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/sea.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MD文章模版"></span>
+            <span id="subtitle" data-typed-text="SQL概述"></span>
           
         </div>
 
@@ -256,8 +257,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-02-14 13:14" pubdate>
-          2026年2月14日 下午
+        <time datetime="2026-03-01 18:13" pubdate>
+          2026年3月1日 晚上
         </time>
       </span>
     
@@ -268,7 +269,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          128 字
         
       </span>
     
@@ -279,7 +280,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -316,12 +317,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MD文章模版</h1>
+            <h1 id="seo-header">SQL概述</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <p>SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL) </p>
+<table>
+<thead>
+<tr>
+<th align="left">类别</th>
+<th align="left">名称</th>
+<th align="left">功能</th>
+<th align="left">常用关键词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>DDL</strong></td>
+<td align="left">数据定义语言</td>
+<td align="left">定义结构 (表、库、索引)</td>
+<td align="left">CREATE, ALTER, DROP, TRUNCATE</td>
+</tr>
+<tr>
+<td align="left"><strong>DQL</strong></td>
+<td align="left">数据查询语言</td>
+<td align="left">数据查询</td>
+<td align="left">SELECT</td>
+</tr>
+<tr>
+<td align="left"><strong>DML</strong></td>
+<td align="left">数据操纵语言</td>
+<td align="left">数据增、删、改</td>
+<td align="left">INSERT, DELETE, UPDATE</td>
+</tr>
+<tr>
+<td align="left"><strong>DCL</strong></td>
+<td align="left">数据控制语言</td>
+<td align="left">权限控制</td>
+<td align="left">GRANT, REVOKE</td>
+</tr>
+<tr>
+<td align="left"><strong>TCL</strong></td>
+<td align="left">事务控制语言</td>
+<td align="left">事务管理</td>
+<td align="left">COMMIT, ROLLBACK, SAVEPOINT</td>
+</tr>
+</tbody></table>
+
                 
               </div>
             
@@ -339,7 +381,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
 
@@ -354,7 +396,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Blog/" class="print-no-link">#Blog</a>
+        <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" class="print-no-link">#关系型数据库</a>
+      
+        <a href="/tags/SQL/" class="print-no-link">#SQL</a>
       
     </div>
   
@@ -366,8 +410,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MD文章模版</div>
-      <div>https://76-s.github.io/2026/02/14/MD文章模版/</div>
+      <div>SQL概述</div>
+      <div>https://76-s.github.io/2026/03/01/SQL概述/</div>
     </div>
     <div class="license-meta">
       
@@ -379,7 +423,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年2月14日</div>
+          <div>2026年3月1日</div>
         </div>
       
       
@@ -407,6 +451,23 @@
 
 
               
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/03/01/AD%EF%BC%88%E6%B4%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%EF%BC%89/" title="AD（活动目录）">
+                        <span class="hidden-mobile">AD（活动目录）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
             </div>
 
             
@@ -414,7 +475,7 @@
   
     <article id="comments" lazyload>
       
-  <div id="SOHUCS" sid='https://76-s.github.io/2026/02/14/MD%E6%96%87%E7%AB%A0%E6%A8%A1%E7%89%88/'></div>
+  <div id="SOHUCS" sid='https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
