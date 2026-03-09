@@ -334,30 +334,6 @@
   </entry>
   
   <entry>
-    <title>AS（自治系统）</title>
-    <link href="https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/"/>
-    <id>https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/</id>
-    <published>2026-02-14T05:14:52.000Z</published>
-    <updated>2026-02-14T00:50:08.814Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="AS（自治系统）"><a href="#AS（自治系统）" class="headerlink" title="AS（自治系统）"></a>AS（自治系统）</h5><p>采用统一路由策略的一组路由器集合，在外部世界来看，一个自治系统是一个单一的实体，每个自治系统有一个由因特网登记处或者ISP分配的识别码（ASN）用于在全局范围内标识该网络实体，将全球庞大的网络划分为逻辑上的区域，全球互联网由数万个 AS 互联而成，便于各组织独立管理内部网络，同时隐藏内部拓扑细节，控制路由表规模。每个自治系统包含运行内部网关协议IGP和外部网关协议EGP的路由器，其中AS内部使用的IGP协议通常有OSPF和ISIS协议，外部网关协议BGP又分为eBGP和iBGP，eBGP负责在AS之间交换可达性信息，而iBGP负责在AS内部交换外来的可达性信息。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;AS（自治系统）&quot;&gt;&lt;a href=&quot;#AS（自治系统）&quot; class=&quot;headerlink&quot; title=&quot;AS（自治系统）&quot;&gt;&lt;/a&gt;AS（自治系统）&lt;/h5&gt;&lt;p&gt;采用统一路由策略的一组路由器集合，在外部世界来看，一个自治系统是一个单一的实体，每个自治系统</summary>
-      
-    
-    
-    
-    <category term="网络" scheme="https://76-s.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="AS" scheme="https://76-s.github.io/tags/AS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>零信任-007</title>
     <link href="https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/"/>
     <id>https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/</id>
@@ -378,6 +354,30 @@
     <category term="零信任" scheme="https://76-s.github.io/tags/%E9%9B%B6%E4%BF%A1%E4%BB%BB/"/>
     
     <category term="网安" scheme="https://76-s.github.io/tags/%E7%BD%91%E5%AE%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AS（自治系统）</title>
+    <link href="https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/"/>
+    <id>https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/</id>
+    <published>2026-02-14T05:14:52.000Z</published>
+    <updated>2026-02-14T00:50:08.814Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="AS（自治系统）"><a href="#AS（自治系统）" class="headerlink" title="AS（自治系统）"></a>AS（自治系统）</h5><p>采用统一路由策略的一组路由器集合，在外部世界来看，一个自治系统是一个单一的实体，每个自治系统有一个由因特网登记处或者ISP分配的识别码（ASN）用于在全局范围内标识该网络实体，将全球庞大的网络划分为逻辑上的区域，全球互联网由数万个 AS 互联而成，便于各组织独立管理内部网络，同时隐藏内部拓扑细节，控制路由表规模。每个自治系统包含运行内部网关协议IGP和外部网关协议EGP的路由器，其中AS内部使用的IGP协议通常有OSPF和ISIS协议，外部网关协议BGP又分为eBGP和iBGP，eBGP负责在AS之间交换可达性信息，而iBGP负责在AS内部交换外来的可达性信息。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;AS（自治系统）&quot;&gt;&lt;a href=&quot;#AS（自治系统）&quot; class=&quot;headerlink&quot; title=&quot;AS（自治系统）&quot;&gt;&lt;/a&gt;AS（自治系统）&lt;/h5&gt;&lt;p&gt;采用统一路由策略的一组路由器集合，在外部世界来看，一个自治系统是一个单一的实体，每个自治系统</summary>
+      
+    
+    
+    
+    <category term="网络" scheme="https://76-s.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="AS" scheme="https://76-s.github.io/tags/AS/"/>
     
   </entry>
   
