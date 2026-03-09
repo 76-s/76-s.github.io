@@ -21,25 +21,24 @@
   <meta name="author" content="76">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL)     类别 名称 功能 常用关键词    DDL 数据定义语言 定义结构 (表、库、索引) CREATE, ALTER, DROP, TRUNCATE   DQL 数据查询语言 数据查询 SELECT   DML 数据操纵语言 数据增、删">
+    <meta name="description" content="是什么？传统广域网：企业总部与分支机构通过专线（如MPLS）连接，配置依赖人工到设备上逐个敲命令，僵化且昂贵。SDWAN：在广域网中引入”软件定义”理念，通过一个集中控制器来统一管理所有网络设备。可以把它想象成———给分散各地的路由器都装上”远程遥控器”，总部人员坐在大屏前就能一键调度全网流量。			    传统WAN SDWAN    手工逐台配置 集中统一控制   硬件绑定严重 软硬件解耦">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL概述">
-<meta property="og:url" content="https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:title" content="SDWAN（软件定义广域网）">
+<meta property="og:url" content="https://76-s.github.io/2026/03/04/SDWAN%EF%BC%88%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%89/index.html">
 <meta property="og:site_name" content="76‘s Blog">
-<meta property="og:description" content="SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL)     类别 名称 功能 常用关键词    DDL 数据定义语言 定义结构 (表、库、索引) CREATE, ALTER, DROP, TRUNCATE   DQL 数据查询语言 数据查询 SELECT   DML 数据操纵语言 数据增、删">
+<meta property="og:description" content="是什么？传统广域网：企业总部与分支机构通过专线（如MPLS）连接，配置依赖人工到设备上逐个敲命令，僵化且昂贵。SDWAN：在广域网中引入”软件定义”理念，通过一个集中控制器来统一管理所有网络设备。可以把它想象成———给分散各地的路由器都装上”远程遥控器”，总部人员坐在大屏前就能一键调度全网流量。			    传统WAN SDWAN    手工逐台配置 集中统一控制   硬件绑定严重 软硬件解耦">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-01T10:13:14.000Z">
-<meta property="article:modified_time" content="2026-03-01T11:46:44.569Z">
+<meta property="article:published_time" content="2026-03-04T05:14:52.000Z">
+<meta property="article:modified_time" content="2026-03-04T07:43:10.359Z">
 <meta property="article:author" content="76">
-<meta property="article:tag" content="SQL">
-<meta property="article:tag" content="关系型数据库">
+<meta property="article:tag" content="sdwan">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>SQL概述 - 76‘s Blog</title>
+  <title>SDWAN（软件定义广域网） - 76‘s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -246,7 +245,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SQL概述"></span>
+            <span id="subtitle" data-typed-text="SDWAN（软件定义广域网）"></span>
           
         </div>
 
@@ -257,8 +256,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-03-01 18:13" pubdate>
-          2026年3月1日 晚上
+        <time datetime="2026-03-04 13:14" pubdate>
+          2026年3月4日 下午
         </time>
       </span>
     
@@ -269,7 +268,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          128 字
+          431 字
         
       </span>
     
@@ -280,7 +279,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -317,52 +316,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">SQL概述</h1>
+            <h1 id="seo-header">SDWAN（软件定义广域网）</h1>
             
             
               <div class="markdown-body">
                 
-                <p>SQL（结构化查询语言）的不同功能分类：数据定义语言(DDL)、数据查询语言(DQL)、数据操纵语言(DML)、数据控制语言(DCL)和事务控制语言(TCL) </p>
+                <h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p>传统广域网：企业总部与分支机构通过专线（如MPLS）连接，配置依赖人工到设备上逐个敲命令，僵化且昂贵。<br>SDWAN：在广域网中引入”软件定义”理念，通过一个集中控制器来统一管理所有网络设备。可以把它想象成———给分散各地的路由器都装上”远程遥控器”，总部人员坐在大屏前就能一键调度全网流量。			</p>
 <table>
 <thead>
 <tr>
-<th align="left">类别</th>
-<th align="left">名称</th>
-<th align="left">功能</th>
-<th align="left">常用关键词</th>
+<th>传统WAN</th>
+<th>SDWAN</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>DDL</strong></td>
-<td align="left">数据定义语言</td>
-<td align="left">定义结构 (表、库、索引)</td>
-<td align="left">CREATE, ALTER, DROP, TRUNCATE</td>
+<td>手工逐台配置</td>
+<td>集中统一控制</td>
 </tr>
 <tr>
-<td align="left"><strong>DQL</strong></td>
-<td align="left">数据查询语言</td>
-<td align="left">数据查询</td>
-<td align="left">SELECT</td>
+<td>硬件绑定严重</td>
+<td>软硬件解耦</td>
 </tr>
 <tr>
-<td align="left"><strong>DML</strong></td>
-<td align="left">数据操纵语言</td>
-<td align="left">数据增、删、改</td>
-<td align="left">INSERT, DELETE, UPDATE</td>
-</tr>
-<tr>
-<td align="left"><strong>DCL</strong></td>
-<td align="left">数据控制语言</td>
-<td align="left">权限控制</td>
-<td align="left">GRANT, REVOKE</td>
-</tr>
-<tr>
-<td align="left"><strong>TCL</strong></td>
-<td align="left">事务控制语言</td>
-<td align="left">事务管理</td>
-<td align="left">COMMIT, ROLLBACK, SAVEPOINT</td>
+<td>被动运维</td>
+<td>智能调度</td>
 </tr>
 </tbody></table>
+<h5 id="在哪使用？"><a href="#在哪使用？" class="headerlink" title="在哪使用？"></a>在哪使用？</h5><p>多分支企业组网：跨国连锁企业、连锁零售、教育机构等，总部统一管理上百个分支的网络。<br>混合云连接：企业同时使用私有云和公有云（AWS&#x2F;Azure），SDWAN可智能选择最优路径。<br>关键业务保障：视频会议、ERP系统等应用需要高优先级保障，自动避开拥堵链路。</p>
+<h5 id="如何实现？"><a href="#如何实现？" class="headerlink" title="如何实现？"></a>如何实现？</h5><p>1、控制层与转发层分离</p>
+<ul>
+<li>集中控制器：负责全局策略下发、流量监控、路径选择</li>
+<li>边缘设备：只负责执行，无需智能决策</li>
+</ul>
+<p>2、智能流量调度</p>
+<ul>
+<li>实时监测链路质量（延迟、丢包、带宽）</li>
+<li>根据应用类型动态选择最佳传输路径（如：视频走专线，文件走公网）</li>
+</ul>
+<p>3、多链路混合</p>
+<ul>
+<li>同时接入专线（MPLS）、互联网（宽带）、4G&#x2F;5G</li>
+<li>自动切换故障链路，保障业务不中断</li>
+</ul>
+<p>4、零接触部署</p>
+<ul>
+<li>新设备联网后自动向控制器注册，配置远程下发</li>
+<li>无需技术人员到场，开箱即用</li>
+</ul>
 
                 
               </div>
@@ -381,7 +381,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  <a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-chain-item">网络</a>
   
   
 
@@ -396,9 +396,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/" class="print-no-link">#关系型数据库</a>
-      
-        <a href="/tags/SQL/" class="print-no-link">#SQL</a>
+        <a href="/tags/sdwan/" class="print-no-link">#sdwan</a>
       
     </div>
   
@@ -410,8 +408,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SQL概述</div>
-      <div>https://76-s.github.io/2026/03/01/SQL概述/</div>
+      <div>SDWAN（软件定义广域网）</div>
+      <div>https://76-s.github.io/2026/03/04/SDWAN（软件定义广域网）/</div>
     </div>
     <div class="license-meta">
       
@@ -423,7 +421,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年3月1日</div>
+          <div>2026年3月4日</div>
         </div>
       
       
@@ -455,12 +453,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/03/06/%E3%80%8ASQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%EF%BC%88%E7%AC%AC5%E7%89%88%EF%BC%89%E3%80%8B%E7%AC%94%E8%AE%B0/" title="《SQL必知必会（第5版）》—— 📝笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">《SQL必知必会（第5版）》—— 📝笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/03/01/AD%EF%BC%88%E6%B4%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%EF%BC%89/" title="AD（活动目录）">
-                        <span class="hidden-mobile">AD（活动目录）</span>
+                      <a href="/2026/03/01/SQL%E7%AC%94%E8%AE%B0/" title="SQL笔记">
+                        <span class="hidden-mobile">SQL笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -475,7 +479,7 @@
   
     <article id="comments" lazyload>
       
-  <div id="SOHUCS" sid='https://76-s.github.io/2026/03/01/SQL%E6%A6%82%E8%BF%B0/'></div>
+  <div id="SOHUCS" sid='https://76-s.github.io/2026/03/04/SDWAN%EF%BC%88%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%89/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {

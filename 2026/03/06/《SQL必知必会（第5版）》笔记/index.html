@@ -21,26 +21,26 @@
   <meta name="author" content="76">
   <meta name="keywords" content="">
   
-    <meta name="description" content="概述：网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。 使用场景：检查设备的网络通信路径 使用方式：tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名 状态判定： 成功跟踪后会返回路径上的设备 IP；  *** 并非">
+    <meta name="description" content="https:&#x2F;&#x2F;forta.com&#x2F;books&#x2F;0135182794&#x2F;  了解SQL  数据库（database）——保存有组织的数据的容器（通常是一个文件或一组文件）  表（table）——某种特定类型数据的结构化清单  模式——关于数据库和表的布局及特性的信息  列（column）——表中的一个字段，所有表都是由一个或多个列组成的  数据类型——允许什么类型的数据，每个表列都有相应的数据类型，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows系统的 tracert 和 MAC&#x2F;Linux系统的 traceroute 命令工具">
-<meta property="og:url" content="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:title" content="《SQL必知必会（第5版）》—— 📝笔记">
+<meta property="og:url" content="https://76-s.github.io/2026/03/06/%E3%80%8ASQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%EF%BC%88%E7%AC%AC5%E7%89%88%EF%BC%89%E3%80%8B%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="76‘s Blog">
-<meta property="og:description" content="概述：网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。 使用场景：检查设备的网络通信路径 使用方式：tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名 状态判定： 成功跟踪后会返回路径上的设备 IP；  *** 并非">
+<meta property="og:description" content="https:&#x2F;&#x2F;forta.com&#x2F;books&#x2F;0135182794&#x2F;  了解SQL  数据库（database）——保存有组织的数据的容器（通常是一个文件或一组文件）  表（table）——某种特定类型数据的结构化清单  模式——关于数据库和表的布局及特性的信息  列（column）——表中的一个字段，所有表都是由一个或多个列组成的  数据类型——允许什么类型的数据，每个表列都有相应的数据类型，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-02-28T05:14:52.000Z">
-<meta property="article:modified_time" content="2026-02-28T05:10:03.560Z">
+<meta property="article:published_time" content="2026-03-06T05:14:52.000Z">
+<meta property="article:modified_time" content="2026-03-08T01:55:05.675Z">
 <meta property="article:author" content="76">
-<meta property="article:tag" content="traceroute">
-<meta property="article:tag" content="tracert">
-<meta property="article:tag" content="网络">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="书籍">
+<meta property="article:tag" content="阅读">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具 - 76‘s Blog</title>
+  <title>《SQL必知必会（第5版）》—— 📝笔记 - 76‘s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -247,7 +247,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具"></span>
+            <span id="subtitle" data-typed-text="《SQL必知必会（第5版）》—— 📝笔记"></span>
           
         </div>
 
@@ -258,8 +258,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-02-28 13:14" pubdate>
-          2026年2月28日 下午
+        <time datetime="2026-03-06 13:14" pubdate>
+          2026年3月6日 下午
         </time>
       </span>
     
@@ -270,7 +270,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          210 字
+          450 字
         
       </span>
     
@@ -281,7 +281,7 @@
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -318,24 +318,111 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</h1>
+            <h1 id="seo-header">《SQL必知必会（第5版）》—— 📝笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h5 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h5><p>网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。</p>
-<h5 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h5><p>检查设备的网络通信路径</p>
-<h5 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h5><p>tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名</p>
-<h5 id="状态判定："><a href="#状态判定：" class="headerlink" title="状态判定："></a>状态判定：</h5><ul>
-<li><p>成功跟踪后会返回路径上的设备 IP；</p>
-</li>
-<li><p>*** 并非网络中断，而是中间设备拒绝响应 traceroute 的探测包，原因可能是：</p>
+                <p><a target="_blank" rel="noopener" href="https://forta.com/books/0135182794/">https://forta.com/books/0135182794/</a></p>
 <ol>
-<li>安全策略：企业级路由器和运营商骨干设备常配置 ACL，阻止 ICMP 消息出站以隐藏网络拓扑</li>
-<li>ICMP限流：路由器为了防止 DDoS 攻击或过载，会对 ICMP Time Exceeded 消息进行限速甚至丢弃</li>
-</ol>
+<li><p>了解SQL</p>
+<ul>
+<li><p>数据库（database）——保存有组织的数据的容器（通常是一个文件或一组文件）</p>
+</li>
+<li><p>表（table）——某种特定类型数据的结构化清单</p>
+</li>
+<li><p>模式——关于数据库和表的布局及特性的信息</p>
+</li>
+<li><p>列（column）——表中的一个字段，所有表都是由一个或多个列组成的</p>
+</li>
+<li><p>数据类型——允许什么类型的数据，每个<strong>表列</strong>都有相应的数据类型，它限制（或允许）该列中存储的数据</p>
+</li>
+<li><p>行（row）——表中的一个记录</p>
+</li>
+<li><p>主键（primary key）——一列或几列，其值能够唯一标识表中每一行</p>
+</li>
+<li><p>SQL（Structured Query Language，结构化查询语言）——一种专门用于与数据库沟通的语言</p>
 </li>
 </ul>
+<blockquote>
+<p>数据库管理系统（DBMS）——用于管理数据库的软件，许多DBMS厂商通过增加语句或指令，对SQL进行了扩展。</p>
+</blockquote>
+</li>
+<li><p>检索数据</p>
+<ul>
+<li>SELECT</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 检索单个列<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products;<br><br># 检索多个列<br><span class="hljs-keyword">SELECT</span> prod_id,prod_name,prod_price<br><span class="hljs-keyword">FROM</span> Products;<br><br># 检索所有列<br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span><br><span class="hljs-keyword">FROM</span> Products;<br><br># 检索不同的值<span class="hljs-operator">-</span>去重<br><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> vend_id<br><span class="hljs-keyword">FROM</span> Products;<br><br># 限制结果<span class="hljs-operator">-</span>只取前<span class="hljs-number">5</span>行<br>## <span class="hljs-keyword">SQL</span> Server<br><span class="hljs-keyword">SELECT</span> TOP <span class="hljs-number">5</span> prod_name<br><span class="hljs-keyword">FROM</span> Products;<br>## DB2<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products<br><span class="hljs-keyword">FETCH</span> <span class="hljs-keyword">FIRST</span> <span class="hljs-number">5</span> <span class="hljs-keyword">ROWS</span> <span class="hljs-keyword">ONLY</span>;<br>## Oracle<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products<br><span class="hljs-keyword">WHERE</span> ROWNUM <span class="hljs-operator">&lt;=</span><span class="hljs-number">5</span>;<br>## MySQL、MariaDB、PostgreSQL、SQLite<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products<br>LIMIT <span class="hljs-number">5</span>;<br>### 只取后<span class="hljs-number">5</span>行<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products<br>LIMIT <span class="hljs-number">5</span> <span class="hljs-keyword">OFFSET</span> <span class="hljs-number">5</span>;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>注释</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> prod_name	<span class="hljs-comment">-- 这是一条注释</span><br><span class="hljs-keyword">FROM</span> Products;<br><br># 这是一条注释<br><span class="hljs-keyword">SELECT</span> prod_name<br><span class="hljs-keyword">FROM</span> Products;<br><br><span class="hljs-comment">/* 多行</span><br><span class="hljs-comment">注释 */</span><br></code></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>排序检索数据</p>
+</li>
+<li><p>过滤数据</p>
+</li>
+<li><p>高级数据过滤</p>
+</li>
+<li><p>用通配符进行过滤</p>
+</li>
+<li><p>创建计算字段</p>
+<ul>
+<li>拼接字段（加号或两个竖杠表示）</li>
+<li>别名（AS）</li>
+<li>执行算数计算（+、-、*、&#x2F;）</li>
+</ul>
+</li>
+<li><p>使用函数处理数据</p>
+</li>
+<li><p>汇总数据</p>
+<ul>
+<li>AVG()</li>
+<li>COUNT()</li>
+<li>MAX()</li>
+<li>MIN()</li>
+<li>SUM()</li>
+</ul>
+</li>
+<li><p>分组数据</p>
+<ul>
+<li>GROUP BY 子句</li>
+<li>HAVING 子句</li>
+</ul>
+</li>
+<li><p>使用子查询</p>
+</li>
+<li><p>联结表</p>
+</li>
+<li><p>创建高级联结</p>
+</li>
+<li><p>组合查询</p>
+</li>
+<li><p>插入数据</p>
+</li>
+<li><p>更新和删除数据</p>
+</li>
+<li><p>创建和操纵表</p>
+</li>
+<li><p>使用视图</p>
+</li>
+<li><p>使用存储过程</p>
+</li>
+<li><p>管理事务处理</p>
+</li>
+<li><p>使用游标</p>
+</li>
+<li><p>高级SQL特性</p>
+<ul>
+<li>约束</li>
+<li>索引</li>
+<li>触发器</li>
+</ul>
+</li>
+</ol>
 
                 
               </div>
@@ -354,7 +441,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-chain-item">网络</a>
+  <a href="/categories/%E4%B9%A6%E7%B1%8D/" class="category-chain-item">书籍</a>
   
   
 
@@ -369,11 +456,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BD%91%E7%BB%9C/" class="print-no-link">#网络</a>
+        <a href="/tags/%E9%98%85%E8%AF%BB/" class="print-no-link">#阅读</a>
       
-        <a href="/tags/tracert/" class="print-no-link">#tracert</a>
+        <a href="/tags/%E4%B9%A6%E7%B1%8D/" class="print-no-link">#书籍</a>
       
-        <a href="/tags/traceroute/" class="print-no-link">#traceroute</a>
+        <a href="/tags/sql/" class="print-no-link">#sql</a>
       
     </div>
   
@@ -385,8 +472,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</div>
-      <div>https://76-s.github.io/2026/02/28/windows系统的 tracert 和 MAC:Linux系统的 traceroute 命令工具/</div>
+      <div>《SQL必知必会（第5版）》—— 📝笔记</div>
+      <div>https://76-s.github.io/2026/03/06/《SQL必知必会（第5版）》笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -398,7 +485,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年2月28日</div>
+          <div>2026年3月6日</div>
         </div>
       
       
@@ -430,18 +517,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20telnet%20%E5%92%8C%20Mac:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20nc%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/" title="windows系统的 telnet 和 Mac/Linux系统的 nc 命令工具">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">windows系统的 telnet 和 Mac/Linux系统的 nc 命令工具</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/02/19/HUAWEI-S-VLAN/" title="HUAWEI-S-VLAN-01">
-                        <span class="hidden-mobile">HUAWEI-S-VLAN-01</span>
+                      <a href="/2026/03/04/SDWAN%EF%BC%88%E8%BD%AF%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%89/" title="SDWAN（软件定义广域网）">
+                        <span class="hidden-mobile">SDWAN（软件定义广域网）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -456,7 +537,7 @@
   
     <article id="comments" lazyload>
       
-  <div id="SOHUCS" sid='https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/'></div>
+  <div id="SOHUCS" sid='https://76-s.github.io/2026/03/06/%E3%80%8ASQL%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%EF%BC%88%E7%AC%AC5%E7%89%88%EF%BC%89%E3%80%8B%E7%AC%94%E8%AE%B0/'></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#SOHUCS', function() {
       Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
