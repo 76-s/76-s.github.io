@@ -6,7 +6,7 @@
   <link href="https://76-s.github.io/atom.xml" rel="self"/>
   
   <link href="https://76-s.github.io/"/>
-  <updated>2026-03-08T01:55:05.675Z</updated>
+  <updated>2026-03-10T12:42:48.845Z</updated>
   <id>https://76-s.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中的 变量、函数、库、类、方法、属性</title>
+    <link href="https://76-s.github.io/2026/03/11/Python%E4%B8%AD%E7%9A%84%20%E5%8F%98%E9%87%8F%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E5%BA%93%E3%80%81%E7%B1%BB%E3%80%81%E6%96%B9%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7/"/>
+    <id>https://76-s.github.io/2026/03/11/Python%E4%B8%AD%E7%9A%84%20%E5%8F%98%E9%87%8F%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E5%BA%93%E3%80%81%E7%B1%BB%E3%80%81%E6%96%B9%E6%B3%95%E3%80%81%E5%B1%9E%E6%80%A7/</id>
+    <published>2026-03-11T05:14:52.000Z</published>
+    <updated>2026-03-10T12:42:48.845Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="what-how"><a href="#what-how" class="headerlink" title="what &amp; how"></a>what &amp; how</h5><p>变量（Variable）：存储数据的名字，指向某个值。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">age = <span class="hljs-number">18</span><br>name = <span class="hljs-string">&quot;Tom&quot;</span><br></code></pre></td></tr></table></figure><p>函数（Function）：可以重复调用的代码块，用来完成某个功能。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):<br>    <span class="hljs-keyword">return</span> a + b<br><br>result = add(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)<br><span class="hljs-built_in">print</span>(result)<br></code></pre></td></tr></table></figure><p>库&#x2F;模块（Library&#x2F;Module）：别人已经写好的功能集合，可直接导入使用。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> math<br><br><span class="hljs-built_in">print</span>(math.sqrt(<span class="hljs-number">16</span>))<br></code></pre></td></tr></table></figure><p>类（Class）：创建对象的模版，描述一类事物的属性和方法。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bark</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;汪汪&quot;</span>)<br></code></pre></td></tr></table></figure><p>方法（Method）：类中的函数称为“方法”，但它们仍然是函数，描述对象的行为。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bark</span>(<span class="hljs-params">self</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;汪汪&quot;</span>)<br><br>dog = Dog()<br>dog.bark()<br></code></pre></td></tr></table></figure><p>属性（Attribute）：对象或类中存储的数据变量</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):<br>        <span class="hljs-variable language_">self</span>.name = name<br><br>dog = Dog(<span class="hljs-string">&quot;旺财&quot;</span>)<br><span class="hljs-built_in">print</span>(dog.name)<br></code></pre></td></tr></table></figure><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">函数 function</span><br><span class="hljs-string">  │</span><br><span class="hljs-string">  ▼</span><br><span class="hljs-string">独立调用</span><br><span class="hljs-string">  add(3,5)</span><br><span class="hljs-string"></span><br><span class="hljs-string">类 class</span><br><span class="hljs-string">  │</span><br><span class="hljs-string">  ▼</span><br><span class="hljs-string">创建对象</span><br><span class="hljs-string">  dog = Dog(&quot;旺财&quot;)</span><br><span class="hljs-string">       │</span><br><span class="hljs-string">       ├── 属性  (dog.name = &quot;旺财&quot;)</span><br><span class="hljs-string">       └── 方法  (dog.bark())</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-comment"># 函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>):      <span class="hljs-comment"># 独立函数</span><br>    <span class="hljs-keyword">return</span> a + b<br><span class="hljs-built_in">print</span>(add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))    <span class="hljs-comment"># 5</span><br><br><span class="hljs-comment"># 类和方法</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span>:<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, name</span>):  <span class="hljs-comment"># 方法</span><br>        <span class="hljs-variable language_">self</span>.name = name      <span class="hljs-comment"># 属性</span><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bark</span>(<span class="hljs-params">self</span>):            <span class="hljs-comment"># 方法</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-variable language_">self</span>.name, <span class="hljs-string">&quot;汪汪&quot;</span>)<br><span class="hljs-comment"># 实例化对象</span><br>dog = Dog(<span class="hljs-string">&quot;旺财&quot;</span>)  <br>dog.bark()                   <span class="hljs-comment"># 调用对象的方法</span><br><span class="hljs-built_in">print</span>(dog.name)              <span class="hljs-comment"># 访问对象的属性  </span><br><br><span class="hljs-comment">## 输出</span><br><span class="hljs-number">5</span><br>旺财 汪汪<br>旺财<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;what-how&quot;&gt;&lt;a href=&quot;#what-how&quot; class=&quot;headerlink&quot; title=&quot;what &amp;amp; how&quot;&gt;&lt;/a&gt;what &amp;amp; how&lt;/h5&gt;&lt;p&gt;变量（Variable）：存储数据的名字，指向某个值。&lt;/p&gt;
+&lt;f</summary>
+      
+    
+    
+    
+    <category term="编程" scheme="https://76-s.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="python" scheme="https://76-s.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环境变量和别名的区别</title>
+    <link href="https://76-s.github.io/2026/03/10/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E5%88%AB%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://76-s.github.io/2026/03/10/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%92%8C%E5%88%AB%E5%90%8D%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2026-03-10T05:14:52.000Z</published>
+    <updated>2026-03-10T11:53:26.410Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h5><p>alias 是“命令替换”，环境变量是“数据变量”。</p><h5 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h5><p>alias 的本质是：把一个命令字符串替换成另一个命令字符串，只在shell解析命令时替换，就像快捷键。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">配置</span><br>alias ll=&quot;ls -al&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">输入</span><br>ll<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">shell 实际执行的是</span><br>ls -al<br></code></pre></td></tr></table></figure><h5 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h5><p>环境变量的本质是：给程序提供配置数据</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">配置</span><br>export JAVA_HOME=/usr/lib/jvm/java17<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">程序运行时可以读取：</span><br>JAVA_HOME<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">很多程序会读取环境变量改变行为，例如：</span><br>PATH<br>HOME<br>LANG<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">输入</span><br>byte76@76deMacBook-Air ~ % echo $HOME<br><span class="hljs-meta prompt_"># </span><span class="language-bash">输出</span><br>/Users/byte76<br></code></pre></td></tr></table></figure><h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><p>alias只存在于shell中，如果在脚本里是不会生效的，是命令快捷方式，环境变量是真正的程序配置参数。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;结论：&quot;&gt;&lt;a href=&quot;#结论：&quot; class=&quot;headerlink&quot; title=&quot;结论：&quot;&gt;&lt;/a&gt;结论：&lt;/h5&gt;&lt;p&gt;alias 是“命令替换”，环境变量是“数据变量”。&lt;/p&gt;
+&lt;h5 id=&quot;别名&quot;&gt;&lt;a href=&quot;#别名&quot; class=&quot;he</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://76-s.github.io/categories/Linux/"/>
+    
+    
+    <category term="linux" scheme="https://76-s.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>《SQL必知必会（第5版）》—— 📝笔记</title>
@@ -157,23 +207,18 @@
   </entry>
   
   <entry>
-    <title>nslookup 和 dig</title>
-    <link href="https://76-s.github.io/2026/02/28/nslookup%20%E5%92%8C%20dig%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://76-s.github.io/2026/02/28/nslookup%20%E5%92%8C%20dig%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
+    <title>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</title>
+    <link href="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
     <published>2026-02-28T05:14:52.000Z</published>
-    <updated>2026-02-28T05:59:26.985Z</updated>
+    <updated>2026-02-28T05:10:03.560Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>标准DNS查询工具</p><table><thead><tr><th align="left">维度</th><th align="left">nslookup</th><th align="left">dig</th></tr></thead><tbody><tr><td align="left">主要场景</td><td align="left">快速查询、基础故障排查</td><td align="left">深度分析、自动化脚本</td></tr><tr><td align="left">功能侧重</td><td align="left">易用性</td><td align="left">详细性和可编程性</td></tr><tr><td align="left">跨平台</td><td align="left">Windows&#x2F;Linux&#x2F;Mac</td><td align="left">Linux&#x2F;Mac</td></tr></tbody></table><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">byte76@76deMacBook-Air ~ % nslookup baidu.com<br>Server:8.8.8.8<span class="hljs-comment"># 使用的DNS服务器</span><br>Address:8.8.8.8#53<span class="hljs-comment"># 服务器地址和端口</span><br><br>Non-authoritative answer:<span class="hljs-comment"># 非权威回答（来自缓存）</span><br>Name:baidu.com<span class="hljs-comment"># 查询的域名</span><br>Address: 124.237.177.164<span class="hljs-comment"># IP地址</span><br>Name:baidu.com<br>Address: 110.242.74.102<br>Name:baidu.com<br>Address: 111.63.65.103<br>Name:baidu.com<br>Address: 111.63.65.247<br><br>byte76@76deMacBook-Air ~ %<br>byte76@76deMacBook-Air ~ % dig baidu.com<br><br>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; baidu.com<span class="hljs-comment"># dig 版本和查询命令</span><br>;; global options: +cmd<br>;; Got answer:<br>;; -&gt;&gt;HEADER&lt;&lt;- <span class="hljs-string">opcode: QUERY, status: NOERROR, id: 7640# 响应状态</span><br><span class="hljs-string">;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; OPT PSEUDOSECTION:</span><br><span class="hljs-string">; EDNS: version: 0, flags:; udp: 512</span><br><span class="hljs-string">;; QUESTION SECTION:# 问题部分</span><br><span class="hljs-string">;baidu.com.INA</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; ANSWER SECTION:# 答案部分</span><br><span class="hljs-string">baidu.com.73INA110.242.74.102</span><br><span class="hljs-string">baidu.com.73INA111.63.65.103</span><br><span class="hljs-string">baidu.com.73INA124.237.177.164</span><br><span class="hljs-string">baidu.com.73INA111.63.65.247</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; Query time: 81 msec # 查询耗时</span><br><span class="hljs-string">;; SERVER: 8.8.8.8#53(8.8.8.8)# 使用的DNS服务器</span><br><span class="hljs-string">;; WHEN: Sat Feb 28 13:14:51 CST 2026# 查询时间</span><br><span class="hljs-string">;; MSG SIZE  rcvd: 102</span><br><span class="hljs-string"></span><br><span class="hljs-string">byte76@76deMacBook-Air ~ %</span><br></code></pre></td></tr></table></figure><h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">应用层逻辑<br>    ↓<br>构造DNS查询报文（RFC 1035标准）<br>    ↓<br>套接字编程（Socket）<br>    ↓<br>UDP/TCP传输层（端口53）<br>    ↓<br>IP网络层<br>    ↓<br>DNS服务器<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h5 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h5><p>网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。</p><h5 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h5><p>检查设备的网络通信路径</p><h5 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h5><p>tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名</p><h5 id="状态判定："><a href="#状态判定：" class="headerlink" title="状态判定："></a>状态判定：</h5><ul><li><p>成功跟踪后会返回路径上的设备 IP；</p></li><li><p>*** 并非网络中断，而是中间设备拒绝响应 traceroute 的探测包，原因可能是：</p><ol><li>安全策略：企业级路由器和运营商骨干设备常配置 ACL，阻止 ICMP 消息出站以隐藏网络拓扑</li><li>ICMP限流：路由器为了防止 DDoS 攻击或过载，会对 ICMP Time Exceeded 消息进行限速甚至丢弃</li></ol></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;标准DNS查询工具&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;维度&lt;/th&gt;
-&lt;th align=</summary>
+    <summary type="html">&lt;h5 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h5&gt;&lt;p&gt;网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 T</summary>
       
     
     
@@ -183,7 +228,9 @@
     
     <category term="网络" scheme="https://76-s.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
-    <category term="DNS" scheme="https://76-s.github.io/tags/DNS/"/>
+    <category term="tracert" scheme="https://76-s.github.io/tags/tracert/"/>
+    
+    <category term="traceroute" scheme="https://76-s.github.io/tags/traceroute/"/>
     
   </entry>
   
@@ -218,18 +265,23 @@
   </entry>
   
   <entry>
-    <title>windows系统的 tracert 和 MAC/Linux系统的 traceroute 命令工具</title>
-    <link href="https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
-    <id>https://76-s.github.io/2026/02/28/windows%E7%B3%BB%E7%BB%9F%E7%9A%84%20tracert%20%E5%92%8C%20MAC:Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%20traceroute%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
+    <title>nslookup 和 dig</title>
+    <link href="https://76-s.github.io/2026/02/28/nslookup%20%E5%92%8C%20dig%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/"/>
+    <id>https://76-s.github.io/2026/02/28/nslookup%20%E5%92%8C%20dig%20%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7/</id>
     <published>2026-02-28T05:14:52.000Z</published>
-    <updated>2026-02-28T05:10:03.560Z</updated>
+    <updated>2026-02-28T05:59:26.985Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h5><p>网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 TTL（Time To Live）值，从而探测路径上的每一跳路由器。</p><h5 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h5><p>检查设备的网络通信路径</p><h5 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h5><p>tracers IP&#x2F;域名 或 traceroute IP&#x2F;域名</p><h5 id="状态判定："><a href="#状态判定：" class="headerlink" title="状态判定："></a>状态判定：</h5><ul><li><p>成功跟踪后会返回路径上的设备 IP；</p></li><li><p>*** 并非网络中断，而是中间设备拒绝响应 traceroute 的探测包，原因可能是：</p><ol><li>安全策略：企业级路由器和运营商骨干设备常配置 ACL，阻止 ICMP 消息出站以隐藏网络拓扑</li><li>ICMP限流：路由器为了防止 DDoS 攻击或过载，会对 ICMP Time Exceeded 消息进行限速甚至丢弃</li></ol></li></ul>]]></content>
+    <content type="html"><![CDATA[<h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><p>标准DNS查询工具</p><table><thead><tr><th align="left">维度</th><th align="left">nslookup</th><th align="left">dig</th></tr></thead><tbody><tr><td align="left">主要场景</td><td align="left">快速查询、基础故障排查</td><td align="left">深度分析、自动化脚本</td></tr><tr><td align="left">功能侧重</td><td align="left">易用性</td><td align="left">详细性和可编程性</td></tr><tr><td align="left">跨平台</td><td align="left">Windows&#x2F;Linux&#x2F;Mac</td><td align="left">Linux&#x2F;Mac</td></tr></tbody></table><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs bash">byte76@76deMacBook-Air ~ % nslookup baidu.com<br>Server:8.8.8.8<span class="hljs-comment"># 使用的DNS服务器</span><br>Address:8.8.8.8#53<span class="hljs-comment"># 服务器地址和端口</span><br><br>Non-authoritative answer:<span class="hljs-comment"># 非权威回答（来自缓存）</span><br>Name:baidu.com<span class="hljs-comment"># 查询的域名</span><br>Address: 124.237.177.164<span class="hljs-comment"># IP地址</span><br>Name:baidu.com<br>Address: 110.242.74.102<br>Name:baidu.com<br>Address: 111.63.65.103<br>Name:baidu.com<br>Address: 111.63.65.247<br><br>byte76@76deMacBook-Air ~ %<br>byte76@76deMacBook-Air ~ % dig baidu.com<br><br>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; baidu.com<span class="hljs-comment"># dig 版本和查询命令</span><br>;; global options: +cmd<br>;; Got answer:<br>;; -&gt;&gt;HEADER&lt;&lt;- <span class="hljs-string">opcode: QUERY, status: NOERROR, id: 7640# 响应状态</span><br><span class="hljs-string">;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; OPT PSEUDOSECTION:</span><br><span class="hljs-string">; EDNS: version: 0, flags:; udp: 512</span><br><span class="hljs-string">;; QUESTION SECTION:# 问题部分</span><br><span class="hljs-string">;baidu.com.INA</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; ANSWER SECTION:# 答案部分</span><br><span class="hljs-string">baidu.com.73INA110.242.74.102</span><br><span class="hljs-string">baidu.com.73INA111.63.65.103</span><br><span class="hljs-string">baidu.com.73INA124.237.177.164</span><br><span class="hljs-string">baidu.com.73INA111.63.65.247</span><br><span class="hljs-string"></span><br><span class="hljs-string">;; Query time: 81 msec # 查询耗时</span><br><span class="hljs-string">;; SERVER: 8.8.8.8#53(8.8.8.8)# 使用的DNS服务器</span><br><span class="hljs-string">;; WHEN: Sat Feb 28 13:14:51 CST 2026# 查询时间</span><br><span class="hljs-string">;; MSG SIZE  rcvd: 102</span><br><span class="hljs-string"></span><br><span class="hljs-string">byte76@76deMacBook-Air ~ %</span><br></code></pre></td></tr></table></figure><h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">应用层逻辑<br>    ↓<br>构造DNS查询报文（RFC 1035标准）<br>    ↓<br>套接字编程（Socket）<br>    ↓<br>UDP/TCP传输层（端口53）<br>    ↓<br>IP网络层<br>    ↓<br>DNS服务器<br></code></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h5 id=&quot;概述：&quot;&gt;&lt;a href=&quot;#概述：&quot; class=&quot;headerlink&quot; title=&quot;概述：&quot;&gt;&lt;/a&gt;概述：&lt;/h5&gt;&lt;p&gt;网络诊断工具，追踪数据包从本地计算机到目标计算机所经过的路径，通过发送一系列 ICMP 回显请求（或其他协议的数据包），逐渐增加 T</summary>
+    <summary type="html">&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h5&gt;&lt;p&gt;标准DNS查询工具&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;维度&lt;/th&gt;
+&lt;th align=</summary>
       
     
     
@@ -239,9 +291,7 @@
     
     <category term="网络" scheme="https://76-s.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
-    <category term="tracert" scheme="https://76-s.github.io/tags/tracert/"/>
-    
-    <category term="traceroute" scheme="https://76-s.github.io/tags/traceroute/"/>
+    <category term="DNS" scheme="https://76-s.github.io/tags/DNS/"/>
     
   </entry>
   
@@ -334,30 +384,6 @@
   </entry>
   
   <entry>
-    <title>零信任-007</title>
-    <link href="https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/"/>
-    <id>https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/</id>
-    <published>2026-02-14T05:14:52.000Z</published>
-    <updated>2026-02-16T05:57:44.718Z</updated>
-    
-    <content type="html"><![CDATA[<h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p>ZTNA（零信任）是一种安全模型，核心理念是“永不信任，始终验证”（不再默认信任任何内部或外部资源），“最小权限”（所有访问请求都必须在身份、设备、位置、行为等上下文的基础上进行 实时验证和授权）</p><h5 id="为什么使用？"><a href="#为什么使用？" class="headerlink" title="为什么使用？"></a>为什么使用？</h5><ul><li>攻击者越来越多地利用内部权限横向移动，导致一次泄露可能波及整个组织；</li><li>零信任通过最小权限原则把风险限制在单个资源层面，提升对高级持续威胁（APT）的抵御能力。</li></ul><h5 id="怎么干活的？"><a href="#怎么干活的？" class="headerlink" title="怎么干活的？"></a>怎么干活的？</h5><ul><li>现代身份访问管理技术：永不默认信任，即使是已经认证的用户或设备，在每次访问时仍需重新评估。</li><li>软件定义边界技术：持续验证 &amp; 最小权限，采用多因素认证 (MFA)、身份管理 (IAM)、端点检测(EDR) 等手段，对每一次请求进行动态评估，只授予完成任务所必需的最小权限，且权限随需求变化可即时收回。</li><li>微隔离技术：通过动态网络策略&#x2F;密钥&#x2F;隐身机制建立针对业务资源的加密隧道，使攻击者难以跨域横向移动。</li></ul><blockquote><p>对于数据中心而言，主要有 南北向流量 和东西向流量，其中南北向流量指通过网关进出数据中心的流量；东西向流量指数据中心内部服务器相互访问的内部流量。</p></blockquote><h5 id="完整访问流程："><a href="#完整访问流程：" class="headerlink" title="完整访问流程："></a>完整访问流程：</h5><p>用户PC联网，访问零信任客户端》<br>客户端程序连接数据平面网关（策略执行点），进行MFA多因素认证（认证信息是由控制平面进行决策）》<br>认证成功后生成令牌，建立到数据平面网关的加密隧道，分配虚拟IP（TUN设备）》<br>数据平面网关将令牌中的上下文信息（身份、设备、位置、时间）发送至控制平面实时判定》<br>动态开通微隔离隧道（仅允许访问特定应用的特定端口），会话级授权，超时&#x2F;环境变化即断连</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;是什么？&quot;&gt;&lt;a href=&quot;#是什么？&quot; class=&quot;headerlink&quot; title=&quot;是什么？&quot;&gt;&lt;/a&gt;是什么？&lt;/h5&gt;&lt;p&gt;ZTNA（零信任）是一种安全模型，核心理念是“永不信任，始终验证”（不再默认信任任何内部或外部资源），“最小权限”（所有访问</summary>
-      
-    
-    
-    
-    
-    <category term="零信任" scheme="https://76-s.github.io/tags/%E9%9B%B6%E4%BF%A1%E4%BB%BB/"/>
-    
-    <category term="网安" scheme="https://76-s.github.io/tags/%E7%BD%91%E5%AE%89/"/>
-    
-  </entry>
-  
-  <entry>
     <title>AS（自治系统）</title>
     <link href="https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/"/>
     <id>https://76-s.github.io/2026/02/14/AS%EF%BC%88%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%EF%BC%89/</id>
@@ -378,6 +404,30 @@
     
     
     <category term="AS" scheme="https://76-s.github.io/tags/AS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零信任-007</title>
+    <link href="https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/"/>
+    <id>https://76-s.github.io/2026/02/14/%E9%9B%B6%E4%BF%A1%E4%BB%BB-007/</id>
+    <published>2026-02-14T05:14:52.000Z</published>
+    <updated>2026-02-16T05:57:44.718Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h5><p>ZTNA（零信任）是一种安全模型，核心理念是“永不信任，始终验证”（不再默认信任任何内部或外部资源），“最小权限”（所有访问请求都必须在身份、设备、位置、行为等上下文的基础上进行 实时验证和授权）</p><h5 id="为什么使用？"><a href="#为什么使用？" class="headerlink" title="为什么使用？"></a>为什么使用？</h5><ul><li>攻击者越来越多地利用内部权限横向移动，导致一次泄露可能波及整个组织；</li><li>零信任通过最小权限原则把风险限制在单个资源层面，提升对高级持续威胁（APT）的抵御能力。</li></ul><h5 id="怎么干活的？"><a href="#怎么干活的？" class="headerlink" title="怎么干活的？"></a>怎么干活的？</h5><ul><li>现代身份访问管理技术：永不默认信任，即使是已经认证的用户或设备，在每次访问时仍需重新评估。</li><li>软件定义边界技术：持续验证 &amp; 最小权限，采用多因素认证 (MFA)、身份管理 (IAM)、端点检测(EDR) 等手段，对每一次请求进行动态评估，只授予完成任务所必需的最小权限，且权限随需求变化可即时收回。</li><li>微隔离技术：通过动态网络策略&#x2F;密钥&#x2F;隐身机制建立针对业务资源的加密隧道，使攻击者难以跨域横向移动。</li></ul><blockquote><p>对于数据中心而言，主要有 南北向流量 和东西向流量，其中南北向流量指通过网关进出数据中心的流量；东西向流量指数据中心内部服务器相互访问的内部流量。</p></blockquote><h5 id="完整访问流程："><a href="#完整访问流程：" class="headerlink" title="完整访问流程："></a>完整访问流程：</h5><p>用户PC联网，访问零信任客户端》<br>客户端程序连接数据平面网关（策略执行点），进行MFA多因素认证（认证信息是由控制平面进行决策）》<br>认证成功后生成令牌，建立到数据平面网关的加密隧道，分配虚拟IP（TUN设备）》<br>数据平面网关将令牌中的上下文信息（身份、设备、位置、时间）发送至控制平面实时判定》<br>动态开通微隔离隧道（仅允许访问特定应用的特定端口），会话级授权，超时&#x2F;环境变化即断连</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;是什么？&quot;&gt;&lt;a href=&quot;#是什么？&quot; class=&quot;headerlink&quot; title=&quot;是什么？&quot;&gt;&lt;/a&gt;是什么？&lt;/h5&gt;&lt;p&gt;ZTNA（零信任）是一种安全模型，核心理念是“永不信任，始终验证”（不再默认信任任何内部或外部资源），“最小权限”（所有访问</summary>
+      
+    
+    
+    
+    
+    <category term="零信任" scheme="https://76-s.github.io/tags/%E9%9B%B6%E4%BF%A1%E4%BB%BB/"/>
+    
+    <category term="网安" scheme="https://76-s.github.io/tags/%E7%BD%91%E5%AE%89/"/>
     
   </entry>
   
