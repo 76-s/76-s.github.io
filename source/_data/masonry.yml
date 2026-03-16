@@ -1,0 +1,16 @@
+#- image: 图片 URL
+#title: 图片标题
+#description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod
+ 
+- image: https://gitee.com/byte76/picgo/raw/master/20260208160216359.png
+  title: 🥥
+  description: 生生不息
+
+- image: https://gitee.com/byte76/picgo/raw/master/20260208160216356.png
+  title: 🌇
+  description: 夕阳西下
+
+- image: https://gitee.com/byte76/picgo/raw/master/20260208160216357.png
+  title: 🌊
+  description: 滔滔江水
+  

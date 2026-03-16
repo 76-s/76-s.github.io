@@ -1,0 +1,30 @@
+#- links_category: 分类名
+#  has_thumbnail: 是否有预览图（true/false)
+#  list:
+#      - name: 名字
+#        link: 链接
+#        description: 描述
+#        avatar: 头像
+#        thumbnail: 预览图（has_thumbnail 为 true 时才需要)
+- links_category: 76
+  has_thumbnail: true
+  list:
+      - name: 测试站点
+        link: https://example.com
+        description: 个人书签导航
+        avatar: https://gitee.com/byte76/picgo/raw/master/20251211160808073.png
+        thumbnail: https://gitee.com/byte76/picgo/raw/master/20251211160921605.jpg
+        # has_thumbnail 为 true 时才需要
+ 
+- links_category: Demo
+  has_thumbnail: false
+  list:
+      - name: 测试站点1
+        link: https://example.com
+        description: Example Site Description
+        avatar: https://gitee.com/byte76/picgo/raw/master/20251211160921602.svg
+      - name: 测试站点2
+        link: https://example.com
+        description: Example Site Description
+        avatar: https://gitee.com/byte76/picgo/raw/master/20251211160921601.svg
+ 
